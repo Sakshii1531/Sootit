@@ -51,7 +51,7 @@ const UserOrders = () => {
                                <Clock size={12} strokeWidth={2.5} />
                                <span className="text-[10px] font-bold uppercase tracking-widest">{order.date}</span>
                            </div>
-                           <h4 className="text-lg font-black text-neutral-900 italic tracking-tighter leading-none">₹{order.price}</h4>
+                           <h4 className="text-lg font-black text-neutral-900 tracking-tighter leading-none">₹{order.price}</h4>
                         </div>
                     </motion.div>
                 ))}

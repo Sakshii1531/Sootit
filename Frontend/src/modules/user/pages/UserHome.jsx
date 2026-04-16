@@ -44,7 +44,7 @@ const Home = () => {
               <motion.div
                 key={i}
                 whileTap={{ scale: 0.96 }}
-                className={`min-w-[240px] snap-center h-32 rounded-[1.8rem] relative overflow-hidden shadow-xl shadow-black/5 group`}
+                className={`min-w-[240px] snap-center h-40 rounded-[1.8rem] relative overflow-hidden shadow-xl shadow-black/5 group`}
               >
                 <img src={p.img} className="absolute inset-0 w-full h-full object-cover" alt="B" />
                 <div className={`absolute inset-0 bg-gradient-to-r ${p.clr}`} />
@@ -74,14 +74,26 @@ const Home = () => {
             <h3 className="text-[9px] font-black uppercase text-slate-600 tracking-[0.2em] leading-none">QUICK ASSIST</h3>
             <div className="h-[1px] w-4 bg-slate-900/10 rounded-full" />
           </div>
-          <div className="grid grid-cols-2 gap-2.5">
-             <motion.div whileTap={{scale:0.96}} className="bg-slate-900 rounded-[1.5rem] p-4 flex flex-col gap-2 shadow-lg shadow-slate-100">
-                <div className="h-8 w-8 bg-white/10 rounded-xl flex items-center justify-center text-white"><Zap size={16} fill="currentColor" /></div>
-                <span className="text-white text-[10px] font-black tracking-tighter italic leading-none">Roadside Help</span>
+          <div className="grid grid-cols-2 gap-4">
+             <motion.div 
+                whileTap={{scale:0.96}} 
+                onClick={() => navigate('/user/category/towing?label=Roadside Assistance')}
+                className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-5 flex flex-col gap-3 shadow-xl shadow-slate-200 border border-white/5 cursor-pointer"
+             >
+                <div className="h-10 w-10 bg-white/10 rounded-2xl flex items-center justify-center text-white backdrop-blur-sm border border-white/10">
+                  <Zap size={16} fill="currentColor" />
+                </div>
+                <span className="text-white text-[11px] font-black tracking-tight leading-none uppercase">Roadside Help</span>
              </motion.div>
-             <motion.div whileTap={{scale:0.96}} className="bg-neutral-800 rounded-[1.5rem] p-4 flex flex-col gap-2 shadow-lg shadow-neutral-100">
-                <div className="h-8 w-8 bg-white/10 rounded-xl flex items-center justify-center text-white"><Shield size={16} /></div>
-                <span className="text-white text-[10px] font-black tracking-tighter italic leading-none">Legal Support</span>
+             <motion.div 
+                whileTap={{scale:0.96}} 
+                onClick={() => navigate('/user/category/legal?label=Legal Support')}
+                className="bg-gradient-to-br from-neutral-800 to-neutral-700 rounded-[2rem] p-5 flex flex-col gap-3 shadow-xl shadow-neutral-200 border border-white/5 cursor-pointer"
+             >
+                <div className="h-10 w-10 bg-white/10 rounded-2xl flex items-center justify-center text-white backdrop-blur-sm border border-white/10">
+                  <Shield size={16} />
+                </div>
+                <span className="text-white text-[11px] font-black tracking-tight leading-none uppercase">Legal Support</span>
              </motion.div>
           </div>
         </section>
