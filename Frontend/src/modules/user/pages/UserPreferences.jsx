@@ -16,7 +16,7 @@ const UserPreferences = () => {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-[13px] font-black tracking-tight text-neutral-900 leading-none mb-1">{label}</span>
-                    <span className="text-[9px] font-black text-neutral-400 uppercase tracking-widest leading-none italic">{status ? 'Enabled' : 'Disabled'}</span>
+                    <span className="text-[9px] font-black text-neutral-400 uppercase tracking-widest leading-none">{status ? 'Enabled' : 'Disabled'}</span>
                 </div>
             </div>
             <button 
@@ -38,7 +38,7 @@ const UserPreferences = () => {
                 <button onClick={() => navigate(-1)} className="h-9 w-9 bg-white border border-black/5 rounded-xl flex items-center justify-center active:scale-90 transition-transform shadow-sm">
                     <ArrowLeft size={16} strokeWidth={3} />
                 </button>
-                <h1 className="text-lg font-black tracking-tighter italic">App Settings</h1>
+                <h1 className="text-lg font-black tracking-tighter">App Settings</h1>
             </div>
 
             <div className="px-5 pt-8 space-y-8">

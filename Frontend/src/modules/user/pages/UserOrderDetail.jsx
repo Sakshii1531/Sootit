@@ -14,7 +14,7 @@ const UserOrderDetail = () => {
                     <button onClick={() => navigate(-1)} className="h-9 w-9 bg-white border border-black/5 rounded-xl flex items-center justify-center active:scale-90 transition-transform shadow-sm">
                         <ArrowLeft size={16} strokeWidth={3} />
                     </button>
-                    <h1 className="text-lg font-black tracking-tighter italic whitespace-nowrap">Order Details</h1>
+                    <h1 className="text-lg font-black tracking-tighter whitespace-nowrap">Order Details</h1>
                 </div>
                 <div className="bg-slate-900 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest">
                     ACTIVE
@@ -58,7 +58,7 @@ const UserOrderDetail = () => {
                             </div>
                             <div>
                                 <h5 className="text-[11px] font-black uppercase tracking-tight text-slate-300">In Transit</h5>
-                                <p className="text-[10px] font-bold text-slate-200 italic font-medium">Expert is on the way</p>
+                                <p className="text-[10px] font-bold text-slate-200 font-medium">Expert is on the way</p>
                             </div>
                         </div>
                     </div>

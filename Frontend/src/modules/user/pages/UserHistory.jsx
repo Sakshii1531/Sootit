@@ -17,7 +17,7 @@ const UserHistory = () => {
                 <button onClick={() => navigate(-1)} className="h-9 w-9 bg-white border border-black/5 rounded-xl flex items-center justify-center active:scale-90 transition-transform shadow-sm">
                     <ArrowLeft size={16} strokeWidth={3} />
                 </button>
-                <h1 className="text-lg font-black tracking-tighter italic">Wallet History</h1>
+                <h1 className="text-lg font-black tracking-tighter">Wallet History</h1>
             </div>
 
             <div className="p-4 space-y-3">
@@ -37,7 +37,7 @@ const UserHistory = () => {
                             </div>
                         </div>
                         <div className="text-right">
-                            <h4 className={`text-[12px] font-black italic mb-1 ${tx.amount.startsWith('+') ? 'text-slate-900' : 'text-neutral-900 opacity-60'}`}>{tx.amount}</h4>
+                            <h4 className={`text-[12px] font-black mb-1 ${tx.amount.startsWith('+') ? 'text-slate-900' : 'text-neutral-900 opacity-60'}`}>{tx.amount}</h4>
                             <span className="text-[7px] font-black uppercase text-neutral-300 tracking-tighter">TXID: {tx.id}</span>
                         </div>
                     </motion.div>

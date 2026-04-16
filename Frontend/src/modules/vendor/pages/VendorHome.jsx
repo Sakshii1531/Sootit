@@ -37,14 +37,14 @@ const VendorHome = () => {
               <DollarSign size={14} className="text-white/40" />
               <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30">Earnings</span>
             </div>
-            <span className="text-2xl font-black tracking-tighter italic">₹4,290.00</span>
+            <span className="text-2xl font-black tracking-tighter">₹4,290.00</span>
           </div>
           <div className="bg-white/10 p-5 rounded-3xl border border-white/5 backdrop-blur-md">
             <div className="flex items-center gap-2 mb-2">
               <Zap size={14} className="text-white/40" />
               <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30">Success Rate</span>
             </div>
-            <span className="text-2xl font-black tracking-tighter italic">98.4%</span>
+            <span className="text-2xl font-black tracking-tighter">98.4%</span>
           </div>
         </div>
       </section>

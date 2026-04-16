@@ -16,7 +16,7 @@ const UserReviews = () => {
                 <button onClick={() => navigate(-1)} className="h-9 w-9 bg-white border border-black/5 rounded-xl flex items-center justify-center active:scale-90 transition-transform shadow-sm">
                     <ArrowLeft size={16} strokeWidth={3} />
                 </button>
-                <h1 className="text-lg font-black tracking-tighter italic">Expert Feedback</h1>
+                <h1 className="text-lg font-black tracking-tighter">Expert Feedback</h1>
             </div>
 
             <div className="p-4 space-y-4">
@@ -32,7 +32,7 @@ const UserReviews = () => {
                                     {rev.expert.charAt(0)}
                                 </div>
                                 <div className="flex flex-col">
-                                    <h4 className="text-sm font-black text-neutral-900 leading-none mb-1.5 underline decoration-black/5 underline-offset-4 italic">{rev.expert}</h4>
+                                    <h4 className="text-sm font-black text-neutral-900 leading-none mb-1.5 underline decoration-black/5 underline-offset-4">{rev.expert}</h4>
                                     <span className="text-[10px] font-black uppercase text-neutral-400 tracking-widest leading-none">{rev.type}</span>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@ const UserReviews = () => {
                            ))}
                         </div>
                         
-                        <p className="text-[10px] font-bold text-neutral-500 italic leading-relaxed border-l-2 border-slate-900 pl-3">"{rev.comment}"</p>
+                        <p className="text-[10px] font-bold text-neutral-500 leading-relaxed border-l-2 border-slate-900 pl-3">"{rev.comment}"</p>
                     </motion.div>
                 ))}
             </div>

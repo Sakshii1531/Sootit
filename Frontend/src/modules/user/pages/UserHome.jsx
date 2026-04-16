@@ -19,7 +19,7 @@ const Home = () => {
     <div className="bg-white min-h-screen font-inter overflow-hidden">
       <AppHero user={user} />
 
-      <div className="px-4 py-4 space-y-10 pb-28">
+      <div className="px-4 py-4 space-y-10 pb-10">
         {/* Banner Card Grid - Ultra Compact */}
         <section>
           <div className="flex items-center justify-between mb-4 px-1">
@@ -105,14 +105,14 @@ const Home = () => {
           </div>
           <motion.div 
             whileTap={{ scale: 0.98 }}
-            className="bg-slate-50 border border-slate-100 rounded-[1.4rem] p-3 flex items-center gap-3 active:scale-95 transition-all"
+            className="bg-white border-2 border-slate-200 rounded-[1.4rem] p-3 flex items-center gap-3 active:scale-95 transition-all"
           >
             <div className="h-9 w-9 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-lg shadow-slate-100">
               <Clock size={16} strokeWidth={2.5} />
             </div>
             <div className="flex-1">
               <div className="flex justify-between items-center mb-0.5">
-                <h4 className="text-[10px] font-black text-slate-900 leading-none italic">Mechanic Dispatched</h4>
+                <h4 className="text-[10px] font-black text-slate-900 leading-none">Mechanic Dispatched</h4>
                 <div className="flex gap-0.5 animate-pulse">
                     <div className="h-1 w-2 bg-slate-400 rounded-full" />
                     <div className="h-1 w-1 bg-slate-200 rounded-full" />
@@ -124,12 +124,12 @@ const Home = () => {
         </section>
 
         {/* Compact Trust Stats */}
-        <div className="grid grid-cols-2 gap-2 pb-6">
+        <div className="grid grid-cols-2 gap-2">
           {[
             { label: "15k+", sub: "Users", icon: User, clr: "text-slate-800", bg: "bg-slate-100" },
             { label: "500+", sub: "Pros", icon: Star, clr: "text-slate-900", bg: "bg-slate-50" },
           ].map((item, i) => (
-            <div key={i} className="bg-white border border-slate-100 rounded-[1.2rem] p-3 flex flex-col items-center gap-1.5 text-center">
+            <div key={i} className="bg-white border-2 border-slate-200 rounded-[1.2rem] p-3 flex flex-col items-center gap-1.5 text-center">
               <div className={`h-8 w-8 ${item.bg} ${item.clr} rounded-xl flex items-center justify-center`}>
                 <item.icon size={14} strokeWidth={2.5} />
               </div>

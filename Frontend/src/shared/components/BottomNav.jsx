@@ -40,7 +40,7 @@ const AppBottomNav = () => {
       <motion.nav 
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-white/90 backdrop-blur-2xl rounded-[1.5rem] px-2 py-1.5 flex items-center justify-around shadow-2xl shadow-black/5 pointer-events-auto border border-white/50"
+        className="bg-white/95 backdrop-blur-2xl rounded-[1.5rem] px-2 py-1.5 flex items-center justify-around shadow-2xl shadow-black/5 pointer-events-auto border-2 border-slate-200"
       >
         {!isVendor && !isAdmin && (
           <>

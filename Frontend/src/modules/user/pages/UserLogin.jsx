@@ -85,7 +85,7 @@ const UserLogin = ({ isEmbedded = false }) => {
           </form>
         ) : (
           <form onSubmit={handleVerifyOTP} className="space-y-6">
-            <div className="flex justify-between gap-3">
+            <div className="flex justify-center gap-4">
               {otp.map((digit, idx) => (
                 <input 
                   key={idx}
@@ -95,7 +95,7 @@ const UserLogin = ({ isEmbedded = false }) => {
                   value={digit}
                   onChange={(e) => handleOtpChange(idx, e.target.value)}
                   onKeyUp={(e) => e.key === 'Backspace' && idx > 0 && !digit && document.getElementById(`user-otp-${idx-1}`).focus()}
-                  className="w-14 h-16 bg-neutral-50 border-2 border-neutral-100 rounded-xl text-center text-2xl font-black focus:outline-none focus:border-slate-900 focus:bg-white transition-all shadow-sm"
+                  className="w-14 h-16 bg-white border-2 border-slate-300 rounded-xl text-center text-2xl font-black focus:outline-none focus:border-slate-900 transition-all shadow-sm"
                 />
               ))}
             </div>

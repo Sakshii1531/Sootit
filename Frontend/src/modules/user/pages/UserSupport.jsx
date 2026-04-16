@@ -23,7 +23,7 @@ const UserSupport = () => {
                 >
                     <ArrowLeft size={18} strokeWidth={3} />
                 </button>
-                <h1 className="text-3xl font-black italic tracking-tighter mb-2">Help Center.</h1>
+                <h1 className="text-3xl font-black tracking-tighter mb-2">Help Center.</h1>
                 <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">We are here to assist 24/7</p>
             </div>
 
@@ -51,7 +51,7 @@ const UserSupport = () => {
                             <motion.button
                                 key={idx}
                                 whileTap={{ scale: 0.99 }}
-                                className="w-full bg-white border border-black/[0.03] p-5 rounded-[1.8rem] flex items-center justify-between group active:bg-slate-50 transition-colors"
+                                className="w-full bg-white border border-slate-200 p-5 rounded-[1.8rem] flex items-center justify-between group active:bg-slate-50 transition-colors"
                             >
                                 <div className="flex items-center gap-4">
                                     <div className="h-2 w-2 bg-slate-100 group-hover:bg-slate-900 rounded-full transition-colors" />

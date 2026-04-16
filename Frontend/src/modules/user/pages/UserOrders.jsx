@@ -17,7 +17,7 @@ const UserOrders = () => {
                 <button onClick={() => navigate(-1)} className="h-9 w-9 bg-white border border-black/5 rounded-xl flex items-center justify-center active:scale-90 transition-transform shadow-sm">
                     <ArrowLeft size={16} strokeWidth={3} />
                 </button>
-                <h1 className="text-lg font-black tracking-tighter italic">Trip History</h1>
+                <h1 className="text-lg font-black tracking-tighter">Trip History</h1>
             </div>
 
             <div className="p-4 space-y-4">

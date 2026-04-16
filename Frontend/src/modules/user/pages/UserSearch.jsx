@@ -19,13 +19,13 @@ const UserSearch = () => {
     return (
         <div className="bg-[#FAFBFD] min-h-screen pb-24 font-inter">
             {/* Minimal Search Header */}
-            <div className="px-5 pt-10 pb-6 sticky top-0 bg-[#FAFBFD]/80 backdrop-blur-md z-50">
+            <div className="px-5 pt-1 pb-6 sticky top-[80px] bg-[#FAFBFD]/80 backdrop-blur-md z-50">
                 <div className="relative group">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 group-focus-within:text-slate-900 transition-colors" size={16} />
                     <input 
                         type="text"
                         placeholder="Search service or expert..."
-                        className="w-full bg-white border border-black/5 rounded-2xl py-3.5 pl-12 pr-4 text-xs font-bold shadow-xl shadow-black/[0.02] focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 outline-none transition-all placeholder:text-neutral-300"
+                        className="w-full bg-white border border-black/5 rounded-2xl py-5 pl-12 pr-4 text-xs font-bold shadow-xl shadow-black/[0.02] focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 outline-none transition-all placeholder:text-neutral-300"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />

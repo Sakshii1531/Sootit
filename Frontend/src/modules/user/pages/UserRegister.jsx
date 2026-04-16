@@ -40,7 +40,7 @@ const UserRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
           )}
 
           <div className="mb-10">
-            <h1 className="text-4xl font-black text-slate-900 tracking-tighter leading-none mb-3 italic">Join Sootit.</h1>
+            <h1 className="text-4xl font-black text-slate-900 tracking-tighter leading-none mb-3">Join Sootit.</h1>
             <p className="text-sm font-bold text-slate-400 leading-tight">Create your profile to access premium vehicle services.</p>
           </div>
 
