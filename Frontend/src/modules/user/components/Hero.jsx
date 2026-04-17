@@ -54,11 +54,11 @@ const AppHero = ({ user }) => {
                     <h3 className="text-[10px] font-black uppercase text-slate-600 tracking-[0.2em] mb-4 pl-1">Prime Services</h3>
                     <div className="flex overflow-x-auto gap-4 pb-2 hide-scrollbar">
                         {[
-                            { icon: Car, label: "Drivers", clr: "bg-slate-50 text-slate-600 transition-all duration-300 group-hover:bg-slate-900 group-hover:text-white" },
-                            { icon: Wrench, label: "Mechanics", clr: "bg-slate-100 text-slate-800" },
-                            { icon: Truck, label: "Towing", clr: "bg-slate-50 text-slate-400 border border-slate-100" },
-                            { icon: FileText, label: "RTO Help", clr: "bg-slate-50 text-slate-600 transition-all duration-300 group-hover:bg-slate-900 group-hover:text-white" },
-                            { icon: Briefcase, label: "Legal", clr: "bg-slate-900 text-white shadow-xl shadow-slate-900/10" },
+                            { icon: Car, label: "Drivers", clr: "bg-slate-50 text-slate-600" },
+                            { icon: Wrench, label: "Mechanics", clr: "bg-slate-50 text-slate-800" },
+                            { icon: Truck, label: "Towing", clr: "bg-slate-50 text-slate-400" },
+                            { icon: FileText, label: "RTO Help", clr: "bg-slate-50 text-slate-600" },
+                            { icon: Briefcase, label: "Legal", clr: "bg-slate-50 text-slate-600" },
                         ].map((item, idx) => (
                             <motion.div
                                 key={idx}
@@ -66,7 +66,7 @@ const AppHero = ({ user }) => {
                                 onClick={() => navigate(`/user/category/${item.label.toLowerCase()}?label=${item.label}`)}
                                 className="flex flex-col items-center gap-3 group cursor-pointer min-w-[70px]"
                             >
-                                <div className={`h-16 w-16 rounded-[1.6rem] flex items-center justify-center ${item.clr} border border-black/5 shadow-xl`}>
+                                <div className={`h-16 w-16 rounded-[1.6rem] flex items-center justify-center ${item.clr} border border-black/5 shadow-xl transition-all duration-200 active:bg-slate-900 active:text-white active:shadow-slate-900/20`}>
                                     <item.icon size={22} strokeWidth={2.5} />
                                 </div>
                                 <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest">{item.label}</span>

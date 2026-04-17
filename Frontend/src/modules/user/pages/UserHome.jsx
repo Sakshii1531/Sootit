@@ -37,6 +37,7 @@ const Home = () => {
           <div className="flex gap-3 overflow-x-auto hide-scrollbar -mx-4 px-4 pb-1 snap-x snap-mandatory">
             {[
               { name: "Amit Vikram", type: "Expert Driver", rate: "4.9", jobs: "120+", img: "https://images.unsplash.com/photo-1549813069-f95e44d7f498?q=80&w=400", clr: "from-slate-900/90 to-slate-900/10" },
+              { name: "Adv. Rahul", type: "Legal Advisor", rate: "5.0", jobs: "90+", img: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=400", clr: "from-stone-900/90 to-stone-900/10" },
               { name: "S. K. Garage", type: "Mechanic", rate: "4.8", jobs: "310+", img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=400", clr: "from-neutral-900/90 to-neutral-900/10" },
               { name: "Fast Towing", type: "Expert", rate: "4.7", jobs: "85+", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=400", clr: "from-slate-800/90 to-slate-800/10" },
               { name: "RTO Consult", type: "Legal Expert", rate: "4.9", jobs: "250+", img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400", clr: "from-slate-900/90 to-slate-900/10" }
