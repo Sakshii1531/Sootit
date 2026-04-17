@@ -21,26 +21,26 @@ const VendorEarnings = () => {
 
   return (
     <div className="bg-neutral-50 min-h-screen pb-24 font-inter">
-      <div className="bg-slate-900 pt-10 pb-12 px-6 rounded-b-[3rem] shadow-2xl shadow-black/20 text-white relative overflow-hidden">
+      <div className="bg-slate-900 pt-6 pb-6 px-6 rounded-b-[2.5rem] shadow-2xl shadow-black/20 text-white relative overflow-hidden">
          <div className="absolute top-0 right-0 h-40 w-40 bg-white/5 rounded-full blur-3xl -mr-10 -mt-20" />
-         <div className="flex justify-between items-start mb-10 relative z-10">
+         <div className="flex justify-between items-start mb-6 relative z-10">
             <div>
-               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-2 block leading-none">Available Balance</span>
-               <h1 className="text-4xl font-black tracking-tighter italic">₹{vendor.wallet.toFixed(2)}</h1>
+               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/60 mb-2 block leading-none">Available Balance</span>
+               <h1 className="text-3xl font-black tracking-tighter">₹{vendor.wallet.toFixed(2)}</h1>
             </div>
-            <button className="h-10 w-10 bg-white/10 rounded-xl flex items-center justify-center border border-white/5 active:scale-90 transition-transform">
-               <RefreshCw size={18} />
+            <button className="h-9 w-9 bg-white/10 rounded-xl flex items-center justify-center border border-white/5 active:scale-90 transition-transform">
+               <RefreshCw size={16} />
             </button>
          </div>
          
-         <div className="flex gap-3 relative z-10">
+         <div className="flex gap-3 relative z-10 justify-center">
             <button 
               onClick={handleRecharge}
-              className="flex-1 bg-white text-slate-900 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest flex items-center justify-center gap-2 active:scale-95 transition-all shadow-xl shadow-white/5"
+              className="bg-white text-slate-900 py-2 px-5 rounded-xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap active:scale-95 transition-all shadow-xl shadow-white/5"
             >
                Recharge Wallet
             </button>
-            <button className="flex-1 bg-white/10 text-white border border-white/5 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest flex items-center justify-center gap-2 active:scale-95 transition-all backdrop-blur-md">
+            <button className="bg-white/10 text-white border border-white/5 py-2 px-5 rounded-xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap active:scale-95 transition-all backdrop-blur-md">
                Withdrawal
             </button>
          </div>

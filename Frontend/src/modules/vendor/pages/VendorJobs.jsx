@@ -42,12 +42,12 @@ const VendorJobs = () => {
         )}
       </AnimatePresence>
 
-      <div className="bg-white px-6 pt-10 pb-6 border-b border-neutral-100 sticky top-0 z-10 shadow-sm shadow-black/[0.02]">
+      <div className="bg-white px-6 pt-6 pb-6 border-b border-neutral-100 sticky top-0 z-10 shadow-sm shadow-black/[0.02]">
          <div className="flex items-center gap-2 mb-3">
            <div className={`h-2 w-2 rounded-full ${config.bg.replace('bg-', 'bg-').split('-')[0]}-600 animate-pulse`} />
            <span className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em]">{config.label} Marketplace</span>
          </div>
-         <h1 className="text-2xl font-black italic mb-5 text-neutral-900 tracking-tighter">Job Board.</h1>
+         <h1 className="text-2xl font-black mb-3 text-neutral-900 tracking-tighter">Job Board.</h1>
          <div className="flex gap-2">
             <div className="flex-1 bg-neutral-50 border border-neutral-200/50 rounded-2xl px-4 py-3 flex items-center gap-3">
                <Search size={18} className="text-neutral-400" />
@@ -67,11 +67,11 @@ const VendorJobs = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             key={job.id} 
-            className="bg-white border border-black/5 rounded-[2.5rem] p-6 shadow-xl shadow-black/[0.01] hover:shadow-black/[0.03] transition-shadow relative overflow-hidden group"
+            className="bg-white border border-slate-200 rounded-[2.5rem] p-5 shadow-xl shadow-black/[0.01] hover:shadow-black/[0.03] hover:border-slate-300 transition-all relative overflow-hidden group"
           >
              <div className="absolute top-0 right-0 h-20 w-20 bg-neutral-50 rounded-bl-[3rem] -mr-10 -mt-10" />
              
-             <div className="flex justify-between items-start mb-4 relative z-10">
+             <div className="flex justify-between items-start mb-2 relative z-10">
                  <div className="flex items-center gap-2">
                   <span className={`text-[9px] font-black uppercase px-2.5 py-1 rounded-xl shadow-sm ${i === 0 ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
                     {i === 0 ? 'Urgent' : 'Available'}
@@ -84,24 +84,22 @@ const VendorJobs = () => {
              </div>
 
              <div className="relative z-10">
-               <h3 className="text-lg font-black tracking-tight leading-tight mb-2 group-hover:text-slate-900 transition-colors uppercase italic">{job.task}</h3>
-               <p className="text-xs font-medium text-neutral-500 mb-4 leading-relaxed tracking-tight">Client is looking for a professional {config.label} to handle this request immediately near {job.distance === 'Remote' || job.distance === 'Online' ? 'your zone' : job.distance}.</p>
+               <h3 className="text-lg font-black tracking-tight leading-tight mb-1 group-hover:text-slate-900 transition-colors uppercase">{job.task}</h3>
+               <p className="text-xs font-medium text-neutral-500 mb-3 leading-relaxed tracking-tight">Client is looking for a professional {config.label} to handle this request immediately near {job.distance === 'Remote' || job.distance === 'Online' ? 'your zone' : job.distance}.</p>
                
-               <div className="flex items-center gap-2 text-neutral-500 mb-6 pb-6 border-b border-neutral-50">
+               <div className="flex items-center gap-2 text-neutral-500 mb-4 pb-4 border-b border-neutral-50">
                   <MapPin size={14} className="text-neutral-400" />
                   <span className="text-[11px] font-bold">{job.name} • <span className="text-slate-900 font-black">{job.distance} away</span></span>
                </div>
                
                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                     <div className="h-8 w-8 bg-neutral-100 rounded-xl flex items-center justify-center">
-                        <Wallet size={16} className="text-slate-900" />
-                     </div>
-                     <span className="text-[10px] font-black uppercase text-neutral-400 tracking-tight">Apply Token: <span className="text-slate-900">₹{job.fee}</span></span>
+                  <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-2xl border border-slate-100">
+                     <Wallet size={14} className="text-slate-600" />
+                     <span className="text-[10px] font-bold uppercase text-slate-500 tracking-tight">Fee: <span className="text-slate-900 font-black">₹{job.fee}</span></span>
                   </div>
                   <button 
                     onClick={() => handleApply(job.id)}
-                    className="bg-slate-900 text-white px-8 py-3.5 rounded-[1.5rem] text-[10px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-xl shadow-black/10"
+                    className="bg-slate-900 text-white px-8 py-3 rounded-[1.5rem] text-[10px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-xl shadow-black/10"
                   >
                      {success === job.id ? 'Applied!' : 'Apply Now'}
                   </button>

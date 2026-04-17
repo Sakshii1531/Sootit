@@ -12,13 +12,13 @@ const VendorSettings = () => {
 
   return (
     <div className="bg-neutral-50 min-h-screen pb-24 font-inter">
-      <div className="bg-white px-6 pt-10 pb-8 shadow-sm flex items-center gap-5 border-b border-neutral-100 sticky top-0 z-10">
-         <div className="h-16 w-16 bg-slate-900 rounded-[1.8rem] flex items-center justify-center text-white font-black text-xl shadow-xl shadow-black/10">
+      <div className="bg-white px-6 pt-10 pb-8 flex items-center gap-5 border-b border-slate-100 sticky top-0 z-10">
+         <div className="h-16 w-16 bg-slate-900 rounded-[1.8rem] flex items-center justify-center text-white font-black text-xl shadow-2xl shadow-slate-200">
             SG
          </div>
          <div className="flex flex-col">
-            <h1 className="text-xl font-black tracking-tighter leading-none mb-1.5 uppercase italic">Sharma Garage</h1>
-            <span className="text-[10px] font-black text-neutral-400 uppercase tracking-widest">ID: VND-48201A</span>
+            <h1 className="text-xl font-black tracking-tighter leading-none mb-1.5 uppercase">Sharma Garage</h1>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">ID: VND-48201A</span>
             <div className="flex items-center gap-1.5 mt-2 bg-slate-50 w-auto self-start px-2 py-1 rounded-lg text-[8px] font-black uppercase text-slate-900 border border-slate-100 shadow-sm">
                <Shield size={10} className="fill-slate-900" /> KYC Verified
             </div>
@@ -27,8 +27,8 @@ const VendorSettings = () => {
 
       <div className="px-6 py-8 space-y-10">
          <section>
-            <h3 className="text-[11px] font-black uppercase text-neutral-300 tracking-[0.25em] mb-5 pl-1">Management Console</h3>
-            <div className="bg-white border text-sm font-bold border-black/5 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
+            <h3 className="text-[11px] font-black uppercase text-slate-400 tracking-[0.25em] mb-5 pl-1">Management Console</h3>
+            <div className="bg-white border text-sm font-bold border-slate-200 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
                <Link to="/vendor/profile" className="flex items-center justify-between p-5 border-b border-neutral-50 active:bg-neutral-50 transition-colors group">
                   <div className="flex items-center gap-4">
                      <User size={18} className="text-neutral-300 group-hover:text-slate-900 transition-colors" strokeWidth={2.5} /> 
@@ -54,8 +54,8 @@ const VendorSettings = () => {
          </section>
 
          <section>
-            <h3 className="text-[11px] font-black uppercase text-neutral-300 tracking-[0.25em] mb-5 pl-1">Configuration</h3>
-            <div className="bg-white border text-sm font-bold border-black/5 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
+            <h3 className="text-[11px] font-black uppercase text-slate-400 tracking-[0.25em] mb-5 pl-1">Configuration</h3>
+            <div className="bg-white border text-sm font-bold border-slate-200 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
                <div className="flex items-center justify-between p-5 border-b border-neutral-50 active:bg-neutral-50 transition-colors group">
                   <div className="flex items-center gap-4">
                      <Settings size={18} className="text-neutral-300 group-hover:text-slate-900 transition-colors" strokeWidth={2.5} /> 

@@ -54,10 +54,10 @@ const AppHero = ({ user }) => {
                     <h3 className="text-[10px] font-black uppercase text-slate-600 tracking-[0.2em] mb-4 pl-1">Prime Services</h3>
                     <div className="flex overflow-x-auto gap-4 pb-2 hide-scrollbar">
                         {[
-                            { icon: Car, label: "Drivers", clr: "bg-slate-900 text-white" },
+                            { icon: Car, label: "Drivers", clr: "bg-slate-50 text-slate-600 transition-all duration-300 group-hover:bg-slate-900 group-hover:text-white" },
                             { icon: Wrench, label: "Mechanics", clr: "bg-slate-100 text-slate-800" },
                             { icon: Truck, label: "Towing", clr: "bg-slate-50 text-slate-400 border border-slate-100" },
-                            { icon: FileText, label: "RTO Help", clr: "bg-neutral-800 text-white" },
+                            { icon: FileText, label: "RTO Help", clr: "bg-slate-50 text-slate-600 transition-all duration-300 group-hover:bg-slate-900 group-hover:text-white" },
                             { icon: Briefcase, label: "Legal", clr: "bg-slate-900 text-white shadow-xl shadow-slate-900/10" },
                         ].map((item, idx) => (
                             <motion.div

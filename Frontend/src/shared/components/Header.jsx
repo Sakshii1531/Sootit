@@ -42,12 +42,12 @@ const AppHeader = () => {
           <img src={logo} alt="Sootit" className="w-full h-full object-contain" />
         </div>
         <div className="flex flex-col">
-          <span className="text-[10px] font-black text-neutral-600 leading-none mb-1 uppercase tracking-widest">{isAdmin ? 'System' : isVendor ? 'Partner' : 'Service'}</span>
-          <div className="flex items-center gap-1.5 cursor-pointer">
-            <span className="text-sm font-black text-neutral-900 leading-none tracking-tight">
+          <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-[0.25em] mb-1">{isAdmin ? 'System' : isVendor ? 'Partner' : 'Service'}</span>
+          <div className="flex items-center gap-1 cursor-pointer">
+            <span className="text-base font-black text-neutral-900 tracking-tight">
               {isAdmin ? 'DeepMind' : data?.profile?.name || (isVendor ? 'Partner' : 'Service')}
             </span>
-            <ChevronDown size={12} className="text-slate-900" strokeWidth={3} />
+            <ChevronDown size={14} className="text-slate-400" strokeWidth={2.5} />
           </div>
         </div>
       </div>

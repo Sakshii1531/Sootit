@@ -18,7 +18,7 @@ const VendorRoles = () => {
     <div className="bg-neutral-50 min-h-screen pb-24 text-neutral-900 font-inter">
       <div className="bg-white px-6 py-6 border-b border-neutral-100 flex items-center gap-4 sticky top-0 z-10 shadow-sm shadow-black/[0.01]">
         <Link to="/vendor/settings" className="h-10 w-10 bg-neutral-50 rounded-xl flex items-center justify-center border border-neutral-100 active:scale-90 transition-transform"><ArrowLeft size={20} /></Link>
-        <h1 className="text-xl font-black italic tracking-tighter">Service Roles.</h1>
+        <h1 className="text-xl font-black tracking-tighter">Service Roles.</h1>
       </div>
 
       <div className="px-6 py-8">
@@ -58,7 +58,7 @@ const VendorRoles = () => {
                     <div className={`h-12 w-12 rounded-2xl flex items-center justify-center ${role.bg} ${role.color} shadow-inner`}>
                        <role.icon size={22} strokeWidth={2.5} />
                     </div>
-                    <h4 className="text-sm font-black tracking-tight leading-none uppercase italic">{role.title}</h4>
+                    <h4 className="text-sm font-black tracking-tight leading-none uppercase">{role.title}</h4>
                  </div>
                  <button className="bg-slate-50 text-slate-900 border border-slate-100 px-6 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest active:scale-95 transition-all">
                     Activate

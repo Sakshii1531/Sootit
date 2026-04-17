@@ -18,7 +18,7 @@ const VendorKYC = () => {
         <Link to="/vendor/settings" className="h-10 w-10 bg-neutral-50 rounded-xl flex items-center justify-center border border-neutral-100 active:scale-90 transition-transform">
           <ArrowLeft size={20} />
         </Link>
-        <h1 className="text-xl font-black italic tracking-tighter">Identity & Trust.</h1>
+        <h1 className="text-xl font-black tracking-tighter">Identity & Trust.</h1>
       </div>
 
       <div className="px-6 py-8">
@@ -31,7 +31,7 @@ const VendorKYC = () => {
                  </div>
                  <div>
                     <span className="text-[10px] font-black uppercase text-white/40 tracking-[0.2em] mb-0.5 block">Verification Score</span>
-                    <h2 className="text-2xl font-black tracking-tight italic">Trust: 85%</h2>
+                    <h2 className="text-2xl font-black tracking-tight">Trust: 85%</h2>
                  </div>
               </div>
               <p className="text-xs font-medium text-white/60 mb-8 leading-relaxed">Complete your <span className="text-white font-black">{config.label}</span> specific documents to unlock premium service leads and instant payouts.</p>

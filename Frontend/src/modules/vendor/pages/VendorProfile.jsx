@@ -23,9 +23,9 @@ const VendorProfile = () => {
 
   return (
     <div className="bg-neutral-50 min-h-screen pb-24 text-neutral-900 font-inter">
-      <div className="bg-white px-6 py-6 border-b border-neutral-100 flex items-center gap-4 sticky top-0 z-10 shadow-sm shadow-black/[0.01]">
-        <Link to="/vendor/settings" className="h-10 w-10 bg-neutral-50 rounded-xl flex items-center justify-center border border-neutral-100 active:scale-90 transition-transform"><ArrowLeft size={20} /></Link>
-        <h1 className="text-xl font-black italic tracking-tighter">My Profile.</h1>
+      <div className="bg-white px-6 py-3 border-b border-neutral-100 flex items-center gap-4 sticky top-0 z-10 shadow-sm shadow-black/[0.01]">
+        <Link to="/vendor/settings" className="h-9 w-9 bg-neutral-50 rounded-xl flex items-center justify-center border border-neutral-100 active:scale-90 transition-transform"><ArrowLeft size={18} /></Link>
+        <h1 className="text-xl font-black tracking-tighter">My Profile.</h1>
       </div>
 
       <div className="px-6 py-8">
