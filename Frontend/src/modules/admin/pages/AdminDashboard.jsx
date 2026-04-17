@@ -9,14 +9,14 @@ import logo from "../../../assets/logo.png";
 const AdminDashboard = () => {
   return (
     <div className="bg-neutral-50 min-h-screen pb-24 font-sans">
-      <section className="px-5 py-8 bg-neutral-900 text-white rounded-b-[2.5rem] shadow-2xl">
+      <section className="px-5 py-6 bg-neutral-900 text-white rounded-b-[2.5rem] shadow-2xl">
         <div className="flex items-center gap-4 mb-8">
           <div className="h-12 w-12 bg-white rounded-2xl overflow-hidden flex items-center justify-center border border-white/10 shadow-xl">
             <img src={logo} alt="Logo" className="w-full h-full object-cover p-2" />
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-[10px] font-black uppercase text-white/30 tracking-[0.2em]">System Status</span>
-            <h1 className="text-2xl font-black italic tracking-tighter">Admin Panel.</h1>
+            <span className="text-[10px] font-black uppercase text-white/60 tracking-[0.2em]">System Status</span>
+            <h1 className="text-2xl font-black tracking-tighter text-white">Admin Panel.</h1>
           </div>
         </div>
 
@@ -25,12 +25,12 @@ const AdminDashboard = () => {
             { label: "Active Revenue", val: "₹12.4L", icon: TrendingUp, clr: "text-white" },
             { label: "System Uptime", val: "99.98%", icon: Activity, clr: "text-slate-400" },
           ].map((stat, i) => (
-            <div key={i} className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-              <div className="flex items-center gap-2 mb-2">
-                <stat.icon size={12} className={stat.clr} strokeWidth={3} />
-                <span className="text-[9px] font-black uppercase tracking-widest text-white/40">{stat.label}</span>
+            <div key={i} className="py-2 px-4 bg-white/5 border-2 border-white/40 rounded-2xl flex flex-col justify-center min-h-[72px]">
+              <div className="flex items-center gap-2 mb-1">
+                <stat.icon size={11} className={stat.clr} strokeWidth={3} />
+                <span className="text-[8px] font-black uppercase tracking-widest text-white/60">{stat.label}</span>
               </div>
-              <span className="text-xl font-black">{stat.val}</span>
+              <span className="text-lg font-black leading-none">{stat.val}</span>
             </div>
           ))}
         </div>
@@ -53,14 +53,14 @@ const AdminDashboard = () => {
             <motion.div 
               key={i}
               whileTap={{ scale: 0.98 }}
-              className="bg-white p-5 rounded-3xl border border-black/5 shadow-sm flex items-center gap-4 relative"
+              className="bg-white py-2.5 px-4 rounded-3xl border-2 border-slate-300 shadow-sm flex items-center gap-3.5 relative"
             >
-              <div className="h-11 w-11 bg-neutral-100 rounded-2xl flex items-center justify-center text-neutral-900 border border-black/5">
-                <item.icon size={22} strokeWidth={2.5} />
+              <div className="h-9 w-9 bg-neutral-100 rounded-xl flex items-center justify-center text-neutral-900 border border-black/5">
+                <item.icon size={18} strokeWidth={2.5} />
               </div>
               <div className="flex flex-col">
                 <h3 className="text-sm font-black tracking-tight">{item.label}</h3>
-                <span className="text-[10px] font-bold text-neutral-400 capitalize">{item.count}</span>
+                <span className="text-[10px] font-bold text-neutral-500 capitalize">{item.count}</span>
               </div>
               {item.alert && (
                 <div className="absolute top-4 right-4 h-6 w-6 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center text-slate-900">

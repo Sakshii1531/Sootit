@@ -35,6 +35,7 @@ const VendorProfile = lazy(() => import('./modules/vendor/pages/VendorProfile'))
 const VendorKYC = lazy(() => import('./modules/vendor/pages/VendorKYC'));
 const VendorRoles = lazy(() => import('./modules/vendor/pages/VendorRoles'));
 const AdminDashboard = lazy(() => import('./modules/admin/pages/AdminDashboard'));
+const AdminUsers = lazy(() => import('./modules/admin/pages/AdminUsers'));
 
 // Page Transition Component
 const ModuleWrapper = ({ children, type }) => (
@@ -91,6 +92,9 @@ const AppRoutes = () => {
           
           {/* Admin App Module */}
           <Route path="/admin" element={<ModuleWrapper type="admin"><AdminDashboard /></ModuleWrapper>} />
+          <Route path="/admin/users" element={<ModuleWrapper type="admin"><AdminUsers /></ModuleWrapper>} />
+          <Route path="/admin/vendors" element={<ModuleWrapper type="admin"><AdminDashboard /></ModuleWrapper>} />
+          <Route path="/admin/settings" element={<ModuleWrapper type="admin"><AdminDashboard /></ModuleWrapper>} />
           
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/user" replace />} />
