@@ -36,7 +36,7 @@ const AppBottomNav = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[375px] z-[100] px-3 pb-3 pointer-events-none font-inter">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[375px] z-[100] px-3 pb-1 pointer-events-none font-inter text-center">
       <motion.nav 
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
