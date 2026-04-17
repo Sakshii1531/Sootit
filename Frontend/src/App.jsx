@@ -135,10 +135,28 @@ function App() {
     }
     requestAnimationFrame(raf);
 
+    // Prevent accidental zooming (Pinch to zoom & Ctrl+Wheel)
+    const preventZoom = (e) => {
+      if (e.touches && e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+    
+    const preventWheelZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('touchstart', preventZoom, { passive: false });
+    document.addEventListener('wheel', preventWheelZoom, { passive: false });
+
     const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => {
       clearTimeout(timer);
       lenis.destroy();
+      document.removeEventListener('touchstart', preventZoom);
+      document.removeEventListener('wheel', preventWheelZoom);
     };
   }, []);
 

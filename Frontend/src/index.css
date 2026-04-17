@@ -16,13 +16,21 @@
   --accent: #DC2626;        /* Luxury Crimson */
 }
 
-html {
+html, body {
   font-size: 13px; 
+  touch-action: pan-x pan-y;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   @apply bg-white text-slate-900 antialiased overflow-x-hidden m-0 p-0;
   font-family: 'Inter', system-ui, sans-serif;
+  overscroll-behavior-y: none; /* Prevent pull-to-refresh zoom/bounce */
+}
+
+/* Prevent auto-zoom on iOS focus */
+input, select, textarea {
+  font-size: 16px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,10 +47,11 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-primary);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .app-shell {
     max-width: 100%;
-    @apply shadow-none;
+    @apply shadow-none border-x-0;
+    border-radius: 0;
   }
 }
 
