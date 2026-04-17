@@ -9,9 +9,9 @@ const CategoryDetails = () => {
     const label = searchParams.get('label') || category;
 
     const experts = [
-        { name: "Rahul Deshmukh", exp: "8 Years", rating: "4.9", reviews: "128", price: "₹450/trip", status: "Available", img: "https://i.pravatar.cc/150?u=rahul" },
-        { name: "Vikram Singh", exp: "5 Years", rating: "4.8", reviews: "94", price: "₹380/trip", status: "Online", img: "https://i.pravatar.cc/150?u=vikram" },
-        { name: "Sanjay Kumar", exp: "12 Years", rating: "5.0", reviews: "210", price: "₹600/trip", status: "Available", img: "https://i.pravatar.cc/150?u=sanjay" },
+        { name: "Rahul Deshmukh", exp: "8 Years", rating: "4.9", reviews: "128", status: "Available", img: "https://i.pravatar.cc/150?u=rahul" },
+        { name: "Vikram Singh", exp: "5 Years", rating: "4.8", reviews: "94", status: "Online", img: "https://i.pravatar.cc/150?u=vikram" },
+        { name: "Sanjay Kumar", exp: "12 Years", rating: "5.0", reviews: "210", status: "Available", img: "https://i.pravatar.cc/150?u=sanjay" },
     ];
 
     return (
@@ -41,7 +41,7 @@ const CategoryDetails = () => {
 
             {/* Quick Filter Pill */}
             <div className="px-5 py-4 flex gap-2 overflow-x-auto hide-scrollbar">
-                {['Top Rated', 'Near Me', 'Starting ₹300', 'Exp. 5+ Yrs'].map((f, i) => (
+                {['Top Rated', 'Near Me', 'Exp. 5+ Yrs'].map((f, i) => (
                     <span key={i} className="whitespace-nowrap px-4 py-2 bg-white border border-black/5 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-600 shadow-sm shadow-black/[0.01]">
                         {f}
                     </span>
@@ -87,8 +87,8 @@ const CategoryDetails = () => {
 
                         <div className="flex items-center justify-between pt-5 border-t border-black/[0.03]">
                             <div>
-                                <span className="text-[7.5px] font-black uppercase text-slate-400 tracking-[0.15em] block mb-1 leading-none">Rate Charges</span>
-                                <h4 className="text-base font-black text-slate-900 tracking-tighter leading-none">{expert.price}</h4>
+                                <span className="text-[7.5px] font-black uppercase text-slate-400 tracking-[0.15em] block mb-1 leading-none">Expert Rating</span>
+                                <h4 className="text-base font-black text-slate-900 tracking-tighter leading-none">{expert.rating} Stars</h4>
                             </div>
                             <button 
                                 onClick={() => navigate('/user/booking-success')}

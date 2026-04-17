@@ -66,31 +66,7 @@ const UserProfile = () => {
                     </div>
                 </div>
 
-                {/* Wallet Micro-Shell */}
-                <motion.div 
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-slate-900 rounded-[2.5rem] p-6 text-white shadow-2xl shadow-black/20 relative overflow-hidden group mb-8"
-                >
-                    <div className="absolute top-0 right-0 h-full w-40 bg-white/5 skew-x-[-25deg] translate-x-12 blur-3xl" />
-                    <div className="relative z-10">
-                        <div className="flex justify-between items-start mb-6">
-                            <div>
-                                <span className="text-[10px] font-black uppercase text-white/40 tracking-[0.2em] mb-1.5 block leading-none">Total Balance</span>
-                                <h3 className="text-3xl font-black tracking-tighter">₹ {user.wallet?.toFixed(1) || "0.0"}</h3>
-                            </div>
-                            <div className="h-10 w-10 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-md shadow-inner">
-                                <Wallet size={20} strokeWidth={2.5} />
-                            </div>
-                        </div>
-                        <div className="flex gap-3">
-                            <button className="flex-1 bg-white text-slate-900 py-3.5 rounded-xl font-black uppercase text-[10px] tracking-widest active:scale-95 transition-all shadow-xl shadow-white/5">Add Money</button>
-                            <button 
-                                onClick={() => navigate('/user/history')}
-                                className="flex-1 bg-white/10 text-white py-3.5 rounded-xl font-black uppercase text-[10px] tracking-widest active:scale-95 transition-all border border-white/5 backdrop-blur-md"
-                            >History</button>
-                        </div>
-                    </div>
-                </motion.div>
+
 
                 {/* Menu Sections */}
                 <div className="space-y-10">
@@ -99,7 +75,7 @@ const UserProfile = () => {
                         <div className="bg-white border border-neutral-100 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
                             <MenuButton 
                                 icon={Package} 
-                                label="My Trip History" 
+                                label="My Service History" 
                                 sublabel="Manage Bookings" 
                                 bg="bg-slate-50" 
                                 color="text-slate-800"

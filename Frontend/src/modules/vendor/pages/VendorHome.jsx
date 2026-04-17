@@ -35,12 +35,12 @@ const VendorHome = () => {
           <div className="bg-white/[0.08] p-5 rounded-[2rem] border border-white/5 backdrop-blur-md">
             <div className="flex items-center gap-2 mb-3">
               <div className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center">
-                <DollarSign size={12} className="text-white/80" />
+                <Activity size={12} className="text-white/80" />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">Total Earnings</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">Lead Response</span>
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="text-2xl font-black tracking-tighter">₹4,290.00</span>
+              <span className="text-2xl font-black tracking-tighter">Instant</span>
             </div>
           </div>
           <div className="bg-white/[0.08] p-5 rounded-[2rem] border border-white/5 backdrop-blur-md">
@@ -148,8 +148,8 @@ const VendorHome = () => {
               
               <div className="bg-neutral-50 p-3 rounded-2xl flex items-center justify-between border border-neutral-100">
                  <div className="flex items-center gap-2 pl-1">
-                    <Wallet size={12} className="text-slate-900" />
-                    <span className="text-[9px] font-black uppercase text-slate-900 tracking-tighter">Token Fee: ₹{job.fee}</span>
+                    <Shield size={12} className="text-slate-900" />
+                    <span className="text-[9px] font-black uppercase text-slate-900 tracking-tighter">Verified Lead</span>
                  </div>
                  <button className="bg-slate-900 text-white px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-lg">
                     Apply

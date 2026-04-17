@@ -22,7 +22,7 @@ const AdminDashboard = () => {
 
         <div className="grid grid-cols-2 gap-4">
           {[
-            { label: "Active Revenue", val: "₹12.4L", icon: TrendingUp, clr: "text-white" },
+            { label: "Active Nodes", val: "124", icon: TrendingUp, clr: "text-white" },
             { label: "System Uptime", val: "99.98%", icon: Activity, clr: "text-slate-400" },
           ].map((stat, i) => (
             <div key={i} className="py-2 px-4 bg-white/5 border-2 border-white/40 rounded-2xl flex flex-col justify-center min-h-[72px]">
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
           {[
             { label: "User Management", count: "14.2k Active Users", icon: Users },
             { label: "Vendor Verification", count: "152 Pending Requests", icon: ShieldCheck, alert: true },
-            { label: "Job Postings", count: "890 Ongoing Trips", icon: Briefcase },
+            { label: "Job Postings", count: "890 Ongoing Services", icon: Briefcase },
           ].map((item, i) => (
             <motion.div 
               key={i}

@@ -20,13 +20,9 @@ const VendorJobs = () => {
   }, []);
 
   const handleApply = (id) => {
-    const ok = applyForJob(id);
-    if (ok) {
-      setSuccess(id);
-      setTimeout(() => setSuccess(null), 3000);
-    } else {
-      alert("Insufficient Balance! Please recharge your wallet.");
-    }
+    applyForJob(id);
+    setSuccess(id);
+    setTimeout(() => setSuccess(null), 3000);
   };
 
   return (
@@ -36,7 +32,7 @@ const VendorJobs = () => {
         {success && (
           <motion.div initial={{ y: -100 }} animate={{ y: 20 }} exit={{ y: -100 }} className="fixed top-0 left-0 w-full px-4 z-[100]">
             <div className="bg-slate-900 text-white rounded-[2rem] p-5 shadow-2xl shadow-black/20 text-center font-black uppercase text-[10px] tracking-widest border border-white/10 backdrop-blur-md">
-              Application Submitted! Wallet Updated.
+              Application Submitted! Professional Notified.
             </div>
           </motion.div>
         )}
@@ -94,8 +90,8 @@ const VendorJobs = () => {
                
                <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-2xl border border-slate-100">
-                     <Wallet size={14} className="text-slate-600" />
-                     <span className="text-[10px] font-bold uppercase text-slate-500 tracking-tight">Fee: <span className="text-slate-900 font-black">₹{job.fee}</span></span>
+                     <ShieldCheck size={14} className="text-slate-600" />
+                     <span className="text-[10px] font-bold uppercase text-slate-500 tracking-tight">Verified Lead</span>
                   </div>
                   <button 
                     onClick={() => handleApply(job.id)}

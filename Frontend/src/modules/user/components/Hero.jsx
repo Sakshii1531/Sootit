@@ -45,7 +45,7 @@ const AppHero = ({ user }) => {
                     <input 
                         type="text" 
                         placeholder="Search for mechanics, drivers..." 
-                        className="w-full bg-slate-50 border border-slate-300 rounded-[1.5rem] py-5 pl-14 pr-6 text-sm font-bold text-slate-800 focus:outline-none focus:border-slate-900/30 focus:bg-white transition-all placeholder:text-slate-600"
+                        className="w-full bg-slate-50 border border-slate-300 rounded-[1.5rem] py-5 pl-14 pr-6 text-sm font-bold text-slate-800 focus:outline-none focus:border-slate-900/30 focus:bg-white transition-all placeholder:text-slate-600 placeholder:text-[11px]"
                     />
                 </div>
 

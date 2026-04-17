@@ -40,7 +40,7 @@ const UserBookingSuccess = () => {
                     className="text-center mb-12"
                 >
                     <h1 className="text-4xl font-black tracking-tighter mb-3">Expert Booked.</h1>
-                    <p className="text-sm font-bold text-slate-400 max-w-[260px] mx-auto leading-relaxed">Your professional is on the way. You can track the progress in your active trips.</p>
+                    <p className="text-sm font-bold text-slate-400 max-w-[260px] mx-auto leading-relaxed">Your professional is on the way. You can track the progress in your active services.</p>
                 </motion.div>
 
                 {/* Details Card - Premium Polish */}
@@ -89,7 +89,7 @@ const UserBookingSuccess = () => {
                         onClick={() => navigate('/user/orders')}
                         className="w-full bg-slate-900 text-white py-4.5 p-4 rounded-[1.8rem] font-black uppercase tracking-[0.25em] text-[10px] flex items-center justify-center gap-2 shadow-2xl shadow-slate-900/30 active:scale-95 transition-all"
                     >
-                        Track Trip <ArrowRight size={14} strokeWidth={3} />
+                        Track Status <ArrowRight size={14} strokeWidth={3} />
                     </button>
                     <button 
                         onClick={() => navigate('/user')}

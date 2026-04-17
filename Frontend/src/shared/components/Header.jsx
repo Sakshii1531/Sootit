@@ -35,7 +35,7 @@ const AppHeader = () => {
     <motion.header 
       initial={{ y: -40 }}
       animate={{ y: 0 }}
-      className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/[0.03] py-2 px-3 flex items-center justify-between h-20 font-inter"
+      className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-300 py-2 px-3 flex items-center justify-between h-20 font-inter"
     >
       <div className="flex items-center gap-3 group">
         <div className="h-14 w-14 overflow-hidden flex items-center justify-center transition-transform active:scale-95">
@@ -53,13 +53,7 @@ const AppHeader = () => {
       </div>
 
       <div className="flex items-center gap-3">
-        {/* Wallet Widget in Header */}
-        {!isAdmin && !isVendor && (
-          <div className="bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-2xl flex items-center gap-2 shadow-sm scale-90 origin-right transition-transform active:scale-95">
-            <Wallet size={14} className="text-slate-900" strokeWidth={2.5} />
-            <span className="text-xs font-black text-slate-900 leading-none tracking-tighter">₹{data?.wallet?.toFixed(1) || "0.0"}</span>
-          </div>
-        )}
+        <Bell size={20} className="text-slate-400" />
         
         <div className="h-10 w-10 overflow-hidden rounded-2xl border-2 border-white ring-1 ring-black/5 shadow-md">
           <img src={`https://i.pravatar.cc/80?u=${isAdmin ? 'admin' : isVendor ? 'vendor' : 'user'}`} alt="P" className="w-full h-full object-cover" />

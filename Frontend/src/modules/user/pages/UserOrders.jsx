@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 const UserOrders = () => {
     const navigate = useNavigate();
     const orders = [
-        { id: "ORD-9821", expert: "Amit Vikram", type: "Expert Driver", date: "Today, 10:30 AM", status: "Active", price: "450", icon: Navigation, clr: "bg-slate-900 text-white" },
-        { id: "ORD-7712", expert: "Sharma Garage", type: "Full Service", date: "Yesterday, 04:15 PM", status: "Completed", price: "2800", icon: Wrench, clr: "bg-slate-100 text-slate-800" },
-        { id: "ORD-6623", expert: "Towing Kings", type: "Emergency Tow", date: "02 Apr, 2024", status: "Cancelled", price: "1200", icon: Package, clr: "bg-neutral-50 text-neutral-400" },
+        { id: "ORD-9821", expert: "Amit Vikram", type: "Expert Driver", date: "Today, 10:30 AM", status: "Active", icon: Navigation, clr: "bg-slate-900 text-white" },
+        { id: "ORD-7712", expert: "Sharma Garage", type: "Full Service", date: "Yesterday, 04:15 PM", status: "Completed", icon: Wrench, clr: "bg-slate-100 text-slate-800" },
+        { id: "ORD-6623", expert: "Towing Kings", type: "Emergency Tow", date: "02 Apr, 2024", status: "Cancelled", icon: Package, clr: "bg-neutral-50 text-neutral-400" },
     ];
 
     return (
@@ -17,7 +17,7 @@ const UserOrders = () => {
                 <button onClick={() => navigate(-1)} className="h-9 w-9 bg-white border border-black/5 rounded-xl flex items-center justify-center active:scale-90 transition-transform shadow-sm">
                     <ArrowLeft size={16} strokeWidth={3} />
                 </button>
-                <h1 className="text-lg font-black tracking-tighter">Trip History</h1>
+                <h1 className="text-lg font-black tracking-tighter">Service History</h1>
             </div>
 
             <div className="p-4 space-y-4">
@@ -51,7 +51,7 @@ const UserOrders = () => {
                                <Clock size={12} strokeWidth={2.5} />
                                <span className="text-[10px] font-bold uppercase tracking-widest">{order.date}</span>
                            </div>
-                           <h4 className="text-lg font-black text-neutral-900 tracking-tighter leading-none">₹{order.price}</h4>
+                        <span className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em] leading-none">{order.id}</span>
                         </div>
                     </motion.div>
                 ))}

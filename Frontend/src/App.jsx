@@ -74,7 +74,7 @@ const AppRoutes = () => {
           <Route path="/user/support" element={<ModuleWrapper type="user"><UserSupport /></ModuleWrapper>} />
           <Route path="/user/reviews" element={<ModuleWrapper type="user"><UserReviews /></ModuleWrapper>} />
           <Route path="/user/preferences" element={<ModuleWrapper type="user"><UserPreferences /></ModuleWrapper>} />
-          <Route path="/user/history" element={<ModuleWrapper type="user"><UserHistory /></ModuleWrapper>} />
+          <Route path="/user/history" element={<Navigate to="/user/profile" replace />} />
           <Route path="/user/category/:category" element={<ModuleWrapper type="user"><CategoryDetails /></ModuleWrapper>} />
           <Route path="/user/premium-selection" element={<ModuleWrapper type="user"><PremiumSelection /></ModuleWrapper>} />
           <Route path="/user/booking-success" element={<ModuleWrapper type="user"><UserBookingSuccess /></ModuleWrapper>} />
@@ -84,7 +84,7 @@ const AppRoutes = () => {
           <Route path="/vendor/login" element={<ModuleWrapper type="vendor"><VendorLogin /></ModuleWrapper>} />
           <Route path="/vendor/register" element={<ModuleWrapper type="vendor"><VendorRegister /></ModuleWrapper>} />
           <Route path="/vendor/jobs" element={<ModuleWrapper type="vendor"><VendorJobs /></ModuleWrapper>} />
-          <Route path="/vendor/earnings" element={<ModuleWrapper type="vendor"><VendorEarnings /></ModuleWrapper>} />
+          <Route path="/vendor/earnings" element={<Navigate to="/vendor" replace />} />
           <Route path="/vendor/settings" element={<ModuleWrapper type="vendor"><VendorSettings /></ModuleWrapper>} />
           <Route path="/vendor/profile" element={<ModuleWrapper type="vendor"><VendorProfile /></ModuleWrapper>} />
           <Route path="/vendor/kyc" element={<ModuleWrapper type="vendor"><VendorKYC /></ModuleWrapper>} />
