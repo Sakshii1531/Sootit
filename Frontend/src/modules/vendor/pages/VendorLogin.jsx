@@ -53,14 +53,14 @@ const VendorLogin = ({ isEmbedded = false }) => {
     <div className={containerClasses}>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-sm mx-auto">
         {!isEmbedded && (
-          <div className="h-28 w-28 flex items-center justify-center mx-auto mb-6 overflow-hidden">
+          <div className="h-20 w-20 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <img src={logo} alt="Sootit" className="w-full h-full object-contain" />
           </div>
         )}
-        <h1 className={`${isEmbedded ? 'text-3xl' : 'text-5xl'} font-black tracking-tighter leading-tight mb-2 uppercase`}>
+        <h1 className={`${isEmbedded ? 'text-2xl' : 'text-3xl'} font-black tracking-tighter leading-tight mb-2 uppercase text-slate-900`}>
           {isEmbedded ? "Partner Login" : <>Partner<br/>Login.</>}
         </h1>
-        <p className={`${isEmbedded ? 'text-sm' : 'text-lg'} font-medium text-neutral-400 mb-8 tracking-tight opacity-90 leading-snug`}>
+        <p className={`${isEmbedded ? 'text-xs' : 'text-sm'} font-bold text-neutral-400 mb-8 tracking-tight opacity-90 leading-snug`}>
            {step === 1 ? "Enter your phone number to receive OTP" : `Enter the 4-digit code sent to +91 ${phoneNumber}`}
         </p>
 
@@ -81,8 +81,8 @@ const VendorLogin = ({ isEmbedded = false }) => {
               </div>
             </div>
             
-            <button type="submit" className="w-full bg-slate-900 text-white rounded-[1.2rem] py-4 font-black uppercase tracking-widest text-[12px] flex items-center justify-center gap-2 active:scale-95 transition-all mt-6 shadow-xl shadow-slate-900/10">
-              GET OTP <ArrowRight size={18} strokeWidth={3} />
+            <button type="submit" className="w-full bg-slate-900 text-white rounded-[1.2rem] py-4 font-black uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 active:scale-95 transition-all mt-6 shadow-2xl shadow-slate-900/20">
+              GET OTP <ArrowRight size={16} strokeWidth={3} />
             </button>
           </form>
         ) : (

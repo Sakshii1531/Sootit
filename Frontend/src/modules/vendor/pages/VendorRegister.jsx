@@ -59,28 +59,28 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
           )}
 
           <div className="mb-8 px-2">
-            <h1 className="text-3xl font-black text-slate-900 tracking-tighter italic leading-none mb-3">Join as Partner.</h1>
-            <p className="text-sm font-bold text-slate-400">Select your expertise and build your business with Sootit.</p>
+            <h1 className="text-3xl font-black text-slate-900 tracking-tighter leading-none mb-3">Join as Partner.</h1>
+            <p className="text-sm font-bold text-slate-500">Select your expertise and build your business with Sootit.</p>
           </div>
 
           <form onSubmit={handleRegister} className="space-y-8">
             {/* Roles Micro-Grid */}
             <div className="space-y-4">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-2">What is your role?</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 pl-2">What is your role?</span>
                 <div className="grid grid-cols-1 gap-3">
                 {roles.map((r) => (
                     <motion.div 
                         key={r.id} 
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setRole(r.id)}
-                        className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-slate-900 bg-slate-900 text-white shadow-2xl shadow-slate-900/20' : 'border-white bg-white text-slate-400 shadow-sm shadow-black/[0.02]'}`}
+                        className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-slate-900 bg-slate-900 text-white shadow-2xl shadow-slate-900/20' : 'border-white bg-white text-slate-500 shadow-sm shadow-black/[0.02]'}`}
                     >
                         <div className={`h-12 w-12 rounded-2xl flex items-center justify-center transition-colors ${role === r.id ? 'bg-white/10 text-white' : 'bg-slate-50 text-slate-300'}`}>
                             <r.icon size={22} strokeWidth={2.5} />
                         </div>
                         <div className="flex flex-col">
                             <span className="text-sm font-black uppercase tracking-tight">{r.label}</span>
-                            <span className={`text-[10px] font-bold ${role === r.id ? 'text-white/60' : 'text-slate-300'}`}>{r.desc}</span>
+                            <span className={`text-[10px] font-bold ${role === r.id ? 'text-white/60' : 'text-slate-400'}`}>{r.desc}</span>
                         </div>
                     </motion.div>
                 ))}
@@ -89,7 +89,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
 
             {/* Direct Information */}
             <div className="space-y-4 pt-4">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-2">Personal Details</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 pl-2">Personal Details</span>
                 <div className="space-y-3">
                     <div className="bg-white border border-black/[0.03] rounded-3xl p-5 flex items-center gap-4 shadow-sm">
                         <User size={18} className="text-slate-300" strokeWidth={2.5} />
