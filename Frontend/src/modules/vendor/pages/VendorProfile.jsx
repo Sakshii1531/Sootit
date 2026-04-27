@@ -31,20 +31,20 @@ const VendorProfile = () => {
       <div className="px-6 py-8">
         <div className="flex flex-col items-center mb-10">
           <div className="relative group">
-            <div className="h-24 w-24 bg-slate-900 rounded-[2.5rem] flex items-center justify-center text-white font-black text-2xl border-4 border-white shadow-2xl shadow-black/10 transition-transform group-hover:scale-105">
+            <div className="h-24 w-24 bg-[#C44545] rounded-[2.5rem] flex items-center justify-center text-white font-black text-2xl border-4 border-white shadow-2xl shadow-[#C44545]/20 transition-transform group-hover:scale-105">
               {formData.name?.[0] || 'SG'}
             </div>
-            <div className="absolute bottom-0 right-0 h-9 w-9 bg-slate-800 rounded-2xl flex items-center justify-center text-white border-2 border-white cursor-pointer active:scale-90 transition-transform shadow-lg">
+            <div className="absolute bottom-0 right-0 h-9 w-9 bg-[#A33636] rounded-2xl flex items-center justify-center text-white border-2 border-white cursor-pointer active:scale-90 transition-transform shadow-lg">
               <Camera size={14} />
             </div>
           </div>
           <h2 className="mt-5 text-xl font-black tracking-tight">{formData.name}</h2>
-          <span className="text-[10px] font-black uppercase text-slate-900 tracking-widest bg-slate-50 px-3 py-1 rounded-xl mt-2 border border-slate-100 shadow-sm">ID: VND-48201A</span>
+          <span className="text-[12px] font-black uppercase text-[#C44545] tracking-widest bg-rose-50 px-3 py-1 rounded-xl mt-2 border border-rose-100 shadow-sm">ID: VND-48201A</span>
         </div>
 
         <div className="space-y-6">
           <div>
-             <label className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Full Name</label>
+             <label className="text-[12px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Full Name</label>
              <div className="bg-white border border-black/5 rounded-2xl px-5 py-4 flex items-center gap-3 shadow-xl shadow-black/[0.01]">
                 <User size={18} className="text-neutral-300" />
                 <input 
@@ -57,7 +57,7 @@ const VendorProfile = () => {
           </div>
 
           <div>
-             <label className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Email Address</label>
+             <label className="text-[12px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Email Address</label>
              <div className="bg-white border border-black/5 rounded-2xl px-5 py-4 flex items-center gap-3 opacity-60 shadow-xl shadow-black/[0.01]">
                 <Mail size={18} className="text-neutral-300" />
                 <input type="email" value={formData.email} disabled className="bg-transparent text-sm font-bold w-full focus:outline-none" />
@@ -65,7 +65,7 @@ const VendorProfile = () => {
           </div>
 
           <div>
-             <label className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Phone Number</label>
+             <label className="text-[12px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Phone Number</label>
              <div className="bg-white border border-black/5 rounded-2xl px-5 py-4 flex items-center gap-3 opacity-60 shadow-xl shadow-black/[0.01]">
                 <Phone size={18} className="text-neutral-300" />
                 <input type="tel" value={formData.phone} disabled className="bg-transparent text-sm font-bold w-full focus:outline-none" />
@@ -73,7 +73,7 @@ const VendorProfile = () => {
           </div>
 
           <div>
-             <label className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Service Address</label>
+             <label className="text-[12px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-2 block">Service Address</label>
              <div className="bg-white border border-black/5 rounded-2xl px-5 py-4 flex items-start gap-3 shadow-xl shadow-black/[0.01]">
                 <MapPin size={18} className="text-neutral-300 mt-1" />
                 <textarea 
@@ -87,7 +87,7 @@ const VendorProfile = () => {
 
           <button 
             onClick={handleSave}
-            className="w-full bg-slate-900 text-white rounded-[1.8rem] py-5 font-black uppercase tracking-widest text-[11px] flex items-center justify-center gap-3 active:scale-95 transition-all mt-10 shadow-2xl shadow-black/10"
+            className="w-full bg-[#C44545] text-white rounded-[1.8rem] py-5 font-black uppercase tracking-widest text-[13px] flex items-center justify-center gap-3 active:scale-95 transition-all mt-10 shadow-2xl shadow-[#C44545]/20"
           >
              Save Profile <Save size={18} />
           </button>

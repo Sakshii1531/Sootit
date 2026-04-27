@@ -32,11 +32,11 @@ const UserReviews = () => {
                                     {rev.expert.charAt(0)}
                                 </div>
                                 <div className="flex flex-col">
-                                    <h4 className="text-sm font-black text-neutral-900 leading-none mb-1.5 underline decoration-black/5 underline-offset-4">{rev.expert}</h4>
-                                    <span className="text-[10px] font-black uppercase text-neutral-400 tracking-widest leading-none">{rev.type}</span>
+                                    <h4 className="text-[15px] font-black text-neutral-900 leading-none mb-1.5">{rev.expert}</h4>
+                                    <span className="text-[13px] font-black uppercase text-neutral-500 tracking-widest leading-none">{rev.type}</span>
                                 </div>
                             </div>
-                            <span className="text-[8px] font-black uppercase text-neutral-300 tracking-widest">{rev.date}</span>
+                            <span className="text-[13px] font-black uppercase text-neutral-500 tracking-widest">{rev.date}</span>
                         </div>
                         
                         <div className="flex items-center gap-1">
@@ -45,7 +45,7 @@ const UserReviews = () => {
                            ))}
                         </div>
                         
-                        <p className="text-[10px] font-bold text-neutral-500 leading-relaxed border-l-2 border-slate-900 pl-3">"{rev.comment}"</p>
+                        <p className="text-[14px] font-bold text-neutral-600 leading-relaxed border-l-2 border-[#C44545] pl-3">"{rev.comment}"</p>
                     </motion.div>
                 ))}
             </div>

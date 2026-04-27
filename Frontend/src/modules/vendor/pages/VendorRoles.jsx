@@ -22,7 +22,7 @@ const VendorRoles = () => {
       </div>
 
       <div className="px-6 py-8">
-        <h3 className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-6">Your Active Profiles</h3>
+        <h3 className="text-[12px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mb-6">Your Active Profiles</h3>
         <div className="space-y-4">
            {activeRoles.map((role, idx) => (
               <div key={idx} className="bg-white p-5 rounded-[2.5rem] border border-black/5 flex items-center justify-between shadow-xl shadow-black/[0.01] relative overflow-hidden group">
@@ -32,17 +32,17 @@ const VendorRoles = () => {
                     </div>
                     <div>
                        <h4 className="text-base font-black tracking-tight leading-none mb-1.5">{role.title}</h4>
-                       <span className={`text-[9px] font-black uppercase tracking-widest ${role.status === 'Active' ? 'text-green-500' : 'text-slate-300'}`}>
+                       <span className={`text-[11px] font-black uppercase tracking-widest ${role.status === 'Active' ? 'text-green-500' : 'text-slate-300'}`}>
                           {role.status}
                        </span>
                     </div>
                  </div>
                  {role.status === 'Active' ? (
-                    <div className="bg-slate-900 h-6 w-11 rounded-full relative shadow-inner">
+                    <div className="bg-[#C44545] h-6 w-11 rounded-full relative shadow-inner">
                        <div className="absolute right-0.5 top-0.5 h-5 w-5 bg-white rounded-full shadow-lg"></div>
                     </div>
                  ) : (
-                    <button className="bg-slate-900 text-white px-5 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-xl shadow-black/10">
+                    <button className="bg-[#C44545] text-white px-5 py-2.5 rounded-xl text-[11px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-xl shadow-[#C44545]/20">
                        Verify
                     </button>
                  )}
@@ -50,7 +50,7 @@ const VendorRoles = () => {
            ))}
         </div>
 
-        <h3 className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mt-12 mb-6">Add More Services</h3>
+        <h3 className="text-[12px] font-black uppercase text-neutral-400 tracking-[0.2em] pl-1 mt-12 mb-6">Add More Services</h3>
         <div className="grid grid-cols-1 gap-4">
            {suggestedRoles.map((role, idx) => (
               <div key={idx} className="bg-white p-5 rounded-[2.5rem] border border-black/5 flex items-center justify-between shadow-xl shadow-black/[0.01] active:scale-98 transition-all">
@@ -60,7 +60,7 @@ const VendorRoles = () => {
                     </div>
                     <h4 className="text-sm font-black tracking-tight leading-none uppercase">{role.title}</h4>
                  </div>
-                 <button className="bg-slate-50 text-slate-900 border border-slate-100 px-6 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest active:scale-95 transition-all">
+                 <button className="bg-rose-50 text-[#C44545] border border-rose-100 px-6 py-2.5 rounded-xl text-[11px] font-black uppercase tracking-widest active:scale-95 transition-all">
                     Activate
                  </button>
               </div>

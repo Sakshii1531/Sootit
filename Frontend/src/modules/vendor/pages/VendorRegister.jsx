@@ -30,7 +30,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
   return (
     <div className={containerClasses}>
       {/* Dynamic Header */}
-      <div className="px-6 py-6 flex items-center justify-between sticky top-0 bg-inherit z-30">
+      <div className="px-6 py-3 flex items-center justify-between sticky top-0 bg-inherit z-30">
         <button 
           onClick={() => isEmbedded ? onSwitchToLogin() : navigate('/')} 
           className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-black/[0.03] active:scale-90 transition-transform"
@@ -38,8 +38,8 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
           <ArrowLeft size={20} className="text-slate-900" strokeWidth={2.5} />
         </button>
         <div className="flex flex-col items-end">
-            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-300">Partner Application</span>
-            <span className="text-[10px] font-bold text-slate-900">Step 01 of 02</span>
+            <span className="text-[12px] font-black uppercase tracking-[0.2em] text-neutral-500">Partner Application</span>
+            <span className="text-[13px] font-bold text-slate-900">Step 01 of 02</span>
         </div>
       </div>
 
@@ -49,38 +49,30 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
             animate={{ opacity: 1, scale: 1 }} 
             className="w-full max-w-sm mx-auto"
         >
-          {/* Logo Section */}
-          {!isEmbedded && (
-            <div className="flex justify-center mb-8">
-              <div className="h-20 w-20 flex items-center justify-center overflow-hidden">
-                 <img src={logo} alt="Sootit" className="w-full h-full object-contain" />
-              </div>
-            </div>
-          )}
 
-          <div className="mb-8 px-2">
+          <div className="mb-5 px-2 pt-2">
             <h1 className="text-3xl font-black text-slate-900 tracking-tighter leading-none mb-3">Join as Partner.</h1>
-            <p className="text-sm font-bold text-slate-500">Select your expertise and build your business with Sootit.</p>
+            <p className="text-[15px] font-bold text-neutral-600">Select your expertise and build your business with Sootit.</p>
           </div>
 
           <form onSubmit={handleRegister} className="space-y-8">
             {/* Roles Micro-Grid */}
             <div className="space-y-4">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 pl-2">What is your role?</span>
+                <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">What is your role?</span>
                 <div className="grid grid-cols-1 gap-3">
                 {roles.map((r) => (
                     <motion.div 
                         key={r.id} 
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setRole(r.id)}
-                        className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-slate-900 bg-slate-900 text-white shadow-2xl shadow-slate-900/20' : 'border-white bg-white text-slate-500 shadow-sm shadow-black/[0.02]'}`}
+                        className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-[#C44545] bg-[#C44545] text-white' : 'border-neutral-200 bg-white text-neutral-800 shadow-sm'}`}
                     >
-                        <div className={`h-12 w-12 rounded-2xl flex items-center justify-center transition-colors ${role === r.id ? 'bg-white/10 text-white' : 'bg-slate-50 text-slate-300'}`}>
+                        <div className={`h-12 w-12 rounded-2xl flex items-center justify-center transition-colors ${role === r.id ? 'bg-white/10 text-white' : 'bg-neutral-100 text-neutral-500'}`}>
                             <r.icon size={22} strokeWidth={2.5} />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-sm font-black uppercase tracking-tight">{r.label}</span>
-                            <span className={`text-[10px] font-bold ${role === r.id ? 'text-white/60' : 'text-slate-400'}`}>{r.desc}</span>
+                            <span className="text-[15px] font-black uppercase tracking-tight">{r.label}</span>
+                            <span className={`text-[12px] font-bold ${role === r.id ? 'text-white/70' : 'text-neutral-500'}`}>{r.desc}</span>
                         </div>
                     </motion.div>
                 ))}
@@ -89,18 +81,18 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
 
             {/* Direct Information */}
             <div className="space-y-4 pt-4">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 pl-2">Personal Details</span>
+                <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">Personal Details</span>
                 <div className="space-y-3">
                     <div className="bg-white border border-black/[0.03] rounded-3xl p-5 flex items-center gap-4 shadow-sm">
-                        <User size={18} className="text-slate-300" strokeWidth={2.5} />
-                        <input type="text" placeholder="Full Name" className="bg-transparent text-sm font-bold text-slate-900 w-full focus:outline-none" />
+                        <User size={18} className="text-neutral-400" strokeWidth={2.5} />
+                        <input type="text" placeholder="Full Name" className="bg-transparent text-[15px] font-bold text-slate-900 w-full focus:outline-none placeholder:text-neutral-400" />
                     </div>
                     <div className="bg-white border border-black/[0.03] rounded-3xl p-5 flex items-center gap-4 shadow-sm">
-                        <Phone size={18} className="text-slate-300" strokeWidth={2.5} />
+                        <Phone size={18} className="text-neutral-400" strokeWidth={2.5} />
                         <div className="flex items-center">
-                            <span className="text-sm font-black text-slate-900 mr-2">+91</span>
-                            <div className="h-4 w-[1px] bg-slate-100 mr-3" />
-                            <input type="tel" maxLength={10} placeholder="Mobile Number" className="bg-transparent text-sm font-bold text-slate-900 w-full focus:outline-none" />
+                            <span className="text-[15px] font-black text-slate-900 mr-2">+91</span>
+                            <div className="h-4 w-[1px] bg-slate-200 mr-3" />
+                            <input type="tel" maxLength={10} placeholder="Mobile Number" className="bg-transparent text-[15px] font-bold text-slate-900 w-full focus:outline-none placeholder:text-neutral-400" />
                         </div>
                     </div>
 
@@ -112,8 +104,8 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
                             exit={{ opacity: 0, height: 0 }}
                             className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-5 flex items-center gap-4"
                         >
-                            <FileText size={18} className="text-slate-300" strokeWidth={2.5} />
-                            <input type="text" placeholder="Driving License Number" className="bg-transparent text-sm font-bold text-slate-800 w-full focus:outline-none placeholder:text-slate-300 uppercase" />
+                            <FileText size={18} className="text-neutral-400" strokeWidth={2.5} />
+                            <input type="text" placeholder="Driving License Number" className="bg-transparent text-[15px] font-bold text-slate-800 w-full focus:outline-none placeholder:text-neutral-400 uppercase" />
                         </motion.div>
                         )}
                     </AnimatePresence>
@@ -122,7 +114,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
             
             <button 
                 type="submit" 
-                className="w-full bg-slate-900 text-white h-16 rounded-[1.8rem] py-4 font-black uppercase tracking-[0.2em] text-[11px] flex items-center justify-between px-8 active:scale-95 transition-all shadow-2xl shadow-slate-900/30 group"
+                className="w-full bg-[#C44545] text-white h-16 rounded-[1.8rem] py-4 font-black uppercase tracking-[0.2em] text-[15px] flex items-center justify-between px-8 active:scale-95 transition-all group"
             >
               <span>Next Stage</span>
               <div className="h-10 w-10 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-colors">
@@ -132,11 +124,11 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
           </form>
 
           <footer className="mt-12 text-center pb-10">
-            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.1em]">
+            <p className="text-[14px] font-bold text-neutral-600 uppercase tracking-[0.1em]">
                Already a partner? 
                <button 
                 onClick={() => isEmbedded ? onSwitchToLogin() : navigate('/vendor/login')} 
-                className="text-slate-900 border-b-2 border-slate-100 pb-0.5 ml-2 transition-all hover:border-slate-900"
+                className="text-[#C44545] font-black border-b-2 border-[#C44545]/30 pb-0.5 ml-2"
               >
                 Login Account
               </button>

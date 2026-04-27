@@ -15,13 +15,13 @@ const UserPreferences = () => {
                     <Icon size={20} strokeWidth={2.5} />
                 </div>
                 <div className="flex flex-col">
-                    <span className="text-[13px] font-black tracking-tight text-neutral-900 leading-none mb-1">{label}</span>
-                    <span className="text-[9px] font-black text-neutral-400 uppercase tracking-widest leading-none">{status ? 'Enabled' : 'Disabled'}</span>
+                    <span className="text-[14px] font-black tracking-tight text-neutral-900 leading-none mb-1">{label}</span>
+                    <span className="text-[12px] font-black text-neutral-500 uppercase tracking-widest leading-none">{status ? 'Enabled' : 'Disabled'}</span>
                 </div>
             </div>
             <button 
                 onClick={() => setStatus(!status)}
-                className={`h-7 w-12 rounded-full relative transition-colors duration-300 ${status ? 'bg-blue-600 shadow-lg shadow-blue-600/20' : 'bg-neutral-200'}`}
+                className={`h-7 w-12 rounded-full relative transition-colors duration-300 ${status ? 'bg-[#C44545] shadow-lg shadow-[#C44545]/20' : 'bg-neutral-200'}`}
             >
                 <motion.div 
                     animate={{ x: status ? 22 : 4 }}
@@ -43,7 +43,7 @@ const UserPreferences = () => {
 
             <div className="px-5 pt-8 space-y-8">
                 <section>
-                    <h3 className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] mb-4 px-1">App Interaction</h3>
+                    <h3 className="text-[14px] font-black uppercase text-neutral-700 tracking-[0.2em] mb-4 px-1">App Interaction</h3>
                     <div className="bg-white border border-black/5 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
                         <PreferenceToggle 
                             icon={Bell} 
@@ -64,7 +64,7 @@ const UserPreferences = () => {
                 </section>
 
                 <section>
-                    <h3 className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.2em] mb-4 px-1">General Settings</h3>
+                    <h3 className="text-[14px] font-black uppercase text-neutral-700 tracking-[0.2em] mb-4 px-1">General Settings</h3>
                     <div className="bg-white border border-black/5 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/[0.01]">
                         <div className="flex items-center justify-between p-5 active:bg-neutral-50 transition-colors">
                             <div className="flex items-center gap-4">
@@ -72,8 +72,8 @@ const UserPreferences = () => {
                                     <Globe size={18} strokeWidth={2.5} />
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-xs font-black tracking-tight text-neutral-900 leading-none mb-1.5 underline decoration-black/5 underline-offset-4">Language</span>
-                                    <span className="text-[9px] font-black text-neutral-400 uppercase tracking-widest leading-none">English (India)</span>
+                                    <span className="text-[14px] font-black tracking-tight text-neutral-900 leading-none mb-1.5">Language</span>
+                                    <span className="text-[12px] font-black text-neutral-500 uppercase tracking-widest leading-none">English (India)</span>
                                 </div>
                             </div>
                         </div>
@@ -84,8 +84,8 @@ const UserPreferences = () => {
                                     <Shield size={18} strokeWidth={2.5} />
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-xs font-black tracking-tight text-neutral-900 leading-none mb-1.5 underline decoration-black/5 underline-offset-4">App Security</span>
-                                    <span className="text-[9px] font-black text-neutral-400 uppercase tracking-widest leading-none">Standard Protection</span>
+                                    <span className="text-[14px] font-black tracking-tight text-neutral-900 leading-none mb-1.5">App Security</span>
+                                    <span className="text-[12px] font-black text-neutral-500 uppercase tracking-widest leading-none">Standard Protection</span>
                                 </div>
                             </div>
                         </div>

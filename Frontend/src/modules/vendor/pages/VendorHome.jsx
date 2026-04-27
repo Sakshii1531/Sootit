@@ -29,7 +29,7 @@ const VendorHome = () => {
   return (
     <div className="bg-white min-h-screen pb-24 font-inter">
       {/* Earnings & Success Rate (Top Bar) */}
-      <section className="px-4 pt-6 pb-8 bg-slate-900 text-white rounded-b-[2.5rem] shadow-xl relative overflow-hidden">
+      <section className="px-4 pt-6 pb-8 bg-[#C44545] text-white rounded-b-[2.5rem] shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 h-40 w-40 bg-white/5 rounded-full blur-3xl -mr-20 -mt-10" />
         <div className="grid grid-cols-2 gap-4 relative z-10">
           <div className="bg-white/[0.08] p-5 rounded-[2rem] border border-white/5 backdrop-blur-md">
@@ -37,7 +37,7 @@ const VendorHome = () => {
               <div className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center">
                 <Activity size={12} className="text-white/80" />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">Lead Response</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-white/50">Lead Response</span>
             </div>
             <div className="flex items-baseline gap-1">
               <span className="text-2xl font-black tracking-tighter">Instant</span>
@@ -48,7 +48,7 @@ const VendorHome = () => {
               <div className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center">
                 <Zap size={12} className="text-white/80" />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">Success Rate</span>
+              <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-white/50">Success Rate</span>
             </div>
             <div className="flex items-baseline gap-1">
               <span className="text-2xl font-black tracking-tighter font-inter">98.4%</span>
@@ -65,8 +65,8 @@ const VendorHome = () => {
                   <config.icon size={22} className="text-white/80" strokeWidth={2.5} />
                </div>
                <div>
-                  <h3 className="text-[11px] font-bold uppercase tracking-[0.25em] mb-1 text-white">{config.label} Profile</h3>
-                  <p className="text-[10px] font-semibold text-white/50">Receiving leads in {config.leadsRange}</p>
+                  <h3 className="text-[13px] font-bold uppercase tracking-[0.25em] mb-1 text-white">{config.label} Profile</h3>
+                  <p className="text-[12px] font-semibold text-white/50">Receiving leads in {config.leadsRange}</p>
                </div>
             </div>
             <div className="h-6 w-11 bg-slate-800 rounded-full relative cursor-pointer shadow-inner">
@@ -77,7 +77,7 @@ const VendorHome = () => {
 
       {/* Active Services Grid */}
       <section className="px-4 py-4">
-        <h2 className="text-[11px] font-black text-neutral-900 uppercase tracking-[0.25em] mb-6 pl-1 border-l-4 border-slate-900 h-4 flex items-center">Active Services</h2>
+        <h2 className="text-[13px] font-black text-neutral-900 uppercase tracking-[0.25em] mb-6 pl-1 border-l-4 border-[#C44545] h-4 flex items-center">Active Services</h2>
         <div className="grid grid-cols-2 gap-4">
           {serviceRoles.map((role, idx) => (
             <motion.div 
@@ -90,7 +90,7 @@ const VendorHome = () => {
               </div>
               <div>
                 <h3 className="text-xs font-black tracking-tight text-neutral-900 mb-1">{role.label}</h3>
-                <span className={`text-[8px] font-black uppercase tracking-widest ${role.status === 'ACTIVE' ? 'text-green-500' : 'text-neutral-300'}`}>
+                <span className={`text-[11px] font-black uppercase tracking-widest ${role.status === 'ACTIVE' ? 'text-green-500' : 'text-neutral-300'}`}>
                   {role.status}
                 </span>
               </div>
@@ -101,22 +101,22 @@ const VendorHome = () => {
 
       {/* Direct Hire Requests */}
       <section className="px-4 py-6">
-        <h2 className="text-[11px] font-black text-neutral-900 uppercase tracking-[0.25em] mb-6 pl-1 border-l-4 border-neutral-900 h-4 flex items-center">Direct Hire Requests</h2>
+        <h2 className="text-[13px] font-black text-neutral-900 uppercase tracking-[0.25em] mb-6 pl-1 border-l-4 border-[#C44545] h-4 flex items-center">Direct Hire Requests</h2>
         {config.directRequests.map((req, idx) => (
           <div key={idx} className="bg-neutral-50 border border-slate-300 p-6 rounded-[2.5rem] relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4">
-              <span className="text-[9px] font-black text-neutral-400">{req.time}</span>
+              <span className="text-[11px] font-black text-neutral-400">{req.time}</span>
             </div>
             <div className="mb-4">
-               <span className="text-[9px] font-black uppercase text-slate-800 bg-slate-100 px-2.5 py-1 rounded-xl mb-2 inline-block">New Request</span>
+               <span className="text-[11px] font-black uppercase text-slate-800 bg-slate-100 px-2.5 py-1 rounded-xl mb-2 inline-block">New Request</span>
                <h3 className="text-xl font-black tracking-tighter text-neutral-900">{req.name}</h3>
             </div>
             <div className="flex items-center gap-1.5 text-neutral-600 mb-6">
                <MapPin size={14} className="text-neutral-400" />
-               <span className="text-[11px] font-bold">{req.location} • <span className="text-slate-900">{req.service}</span></span>
+               <span className="text-[13px] font-bold">{req.location} • <span className="text-slate-900">{req.service}</span></span>
             </div>
             <div className="flex gap-2">
-               <button className="flex-1 bg-slate-900 text-white font-black uppercase text-[11px] tracking-widest py-4 rounded-2xl active:scale-95 transition-all shadow-xl shadow-black/10 flex items-center justify-center gap-2">
+               <button className="flex-1 bg-[#C44545] text-white font-black uppercase text-[11px] tracking-widest py-4 rounded-2xl active:scale-95 transition-all shadow-xl shadow-[#C44545]/15 flex items-center justify-center gap-2">
                   <CheckCircle2 size={16} /> Accept Booking
                </button>
             </div>
@@ -126,9 +126,9 @@ const VendorHome = () => {
 
       {/* Role Specialized Leads */}
       <section className="px-4 py-4">
-        <div className="flex justify-between items-center mb-6 pl-1 pr-1 border-l-4 border-slate-900 h-4 flex-row">
-           <h2 className="text-[11px] font-black text-neutral-900 uppercase tracking-[0.25em]">Nearby Leads</h2>
-           <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{config.featuredJobs.length} New</span>
+        <div className="flex justify-between items-center mb-6 pl-1 pr-1 border-l-4 border-[#C44545] h-4 flex-row">
+           <h2 className="text-[13px] font-black text-neutral-900 uppercase tracking-[0.25em]">Nearby Leads</h2>
+           <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">{config.featuredJobs.length} New</span>
         </div>
         
         <div className="space-y-4">
@@ -136,22 +136,22 @@ const VendorHome = () => {
             <div key={i} className="bg-white p-5 rounded-[2.5rem] border border-slate-300 shadow-xl shadow-black/[0.01] flex flex-col gap-4">
               <div className="flex justify-between items-start">
                  <div className="flex-1">
-                    <span className="text-[9px] font-black text-neutral-400 uppercase tracking-[0.15em] mb-1 block">{job.id}</span>
+                    <span className="text-[11px] font-black text-neutral-400 uppercase tracking-[0.15em] mb-1 block">{job.id}</span>
                     <h3 className="text-sm font-black tracking-tight mb-2">{job.task}</h3>
                     <div className="flex items-center gap-2">
                         <MapPin size={10} className="text-neutral-400" />
-                        <span className="text-[10px] font-bold text-neutral-500">{job.name} • <span className="text-slate-900 font-extrabold">{job.distance}</span></span>
+                        <span className="text-[12px] font-bold text-neutral-500">{job.name} • <span className="text-slate-900 font-extrabold">{job.distance}</span></span>
                     </div>
                  </div>
-                 <span className="text-[9px] font-bold text-neutral-300">{job.time}</span>
+                 <span className="text-[11px] font-bold text-neutral-300">{job.time}</span>
               </div>
               
               <div className="bg-neutral-50 p-3 rounded-2xl flex items-center justify-between border border-neutral-100">
                  <div className="flex items-center gap-2 pl-1">
                     <Shield size={12} className="text-slate-900" />
-                    <span className="text-[9px] font-black uppercase text-slate-900 tracking-tighter">Verified Lead</span>
+                    <span className="text-[11px] font-black uppercase text-slate-900 tracking-tighter">Verified Lead</span>
                  </div>
-                 <button className="bg-slate-900 text-white px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-lg">
+                 <button className="bg-[#C44545] text-white px-6 py-2 rounded-xl text-[12px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-lg">
                     Apply
                  </button>
               </div>

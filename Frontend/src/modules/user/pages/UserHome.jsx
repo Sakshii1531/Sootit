@@ -23,12 +23,12 @@ const Home = () => {
         {/* Banner Card Grid - Ultra Compact */}
         <section>
           <div className="flex items-center justify-between mb-4 px-1">
-            <h3 className="text-[9px] font-black uppercase text-slate-600 tracking-[0.25em] flex items-center gap-1.5">
-              <TrendingUp size={10} className="text-slate-900" /> PREMIUM SELECTION
+            <h3 className="text-[11px] font-black uppercase text-slate-600 tracking-[0.25em] flex items-center gap-1.5">
+              <TrendingUp size={10} className="text-[#C44545]" /> PREMIUM SELECTION
             </h3>
             <button 
               onClick={() => navigate('/user/premium-selection')}
-              className="text-[9px] font-black text-slate-900 uppercase tracking-widest active:scale-95 transition-all"
+              className="text-[11px] font-black text-[#C44545] uppercase tracking-widest active:scale-95 transition-all"
             >
               SEE ALL
             </button>
@@ -36,11 +36,11 @@ const Home = () => {
           
           <div className="flex gap-3 overflow-x-auto hide-scrollbar -mx-4 px-4 pb-1 snap-x snap-mandatory">
             {[
-              { name: "Amit Vikram", type: "Expert Driver", rate: "4.9", jobs: "120+", img: "https://images.unsplash.com/photo-1549813069-f95e44d7f498?q=80&w=400", clr: "from-slate-900/90 to-slate-900/10" },
-              { name: "S. K. Garage", type: "Mechanic", rate: "4.8", jobs: "310+", img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=400", clr: "from-neutral-900/90 to-neutral-900/10" },
-              { name: "Fast Towing", type: "Expert", rate: "4.7", jobs: "85+", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=400", clr: "from-slate-800/90 to-slate-800/10" },
-              { name: "RTO Consult", type: "Legal Expert", rate: "4.9", jobs: "250+", img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400", clr: "from-slate-900/90 to-slate-900/10" },
-              { name: "Adv. Rahul", type: "Legal Advisor", rate: "5.0", jobs: "90+", img: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=400", clr: "from-stone-900/90 to-stone-900/10" }
+              { name: "Amit Vikram", type: "Expert Driver", rate: "4.9", jobs: "120+", img: "https://images.unsplash.com/photo-1549813069-f95e44d7f498?q=80&w=400", clr: "from-black/80 to-transparent" },
+              { name: "S. K. Garage", type: "Mechanic", rate: "4.8", jobs: "310+", img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=400", clr: "from-black/80 to-transparent" },
+              { name: "Fast Towing", type: "Expert", rate: "4.7", jobs: "85+", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=400", clr: "from-black/80 to-transparent" },
+              { name: "RTO Consult", type: "Legal Expert", rate: "4.9", jobs: "250+", img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400", clr: "from-black/80 to-transparent" },
+              { name: "Adv. Rahul", type: "Legal Advisor", rate: "5.0", jobs: "90+", img: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=400", clr: "from-black/80 to-transparent" }
             ].map((p, i) => (
               <motion.div
                 key={i}
@@ -56,12 +56,12 @@ const Home = () => {
                       <Star size={14} className="text-white fill-white" />
                     </div>
                     <div className="bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/10">
-                      <span className="text-white text-[8px] font-bold tracking-widest">★ {p.rate}</span>
+                      <span className="text-white text-[11px] font-bold tracking-widest">★ {p.rate}</span>
                     </div>
                   </div>
                   <div>
                     <h4 className="text-white text-base font-black tracking-tight leading-none mb-1">{p.name}</h4>
-                    <span className="text-white/60 text-[8px] font-black uppercase tracking-[0.1em] leading-none">{p.type} • {p.jobs} Active</span>
+                    <span className="text-white/70 text-[10px] font-black uppercase tracking-[0.1em] leading-none">{p.type} • {p.jobs} Active</span>
                   </div>
                 </div>
               </motion.div>
@@ -72,29 +72,19 @@ const Home = () => {
         {/* Emergency Grid - Compact */}
         <section>
           <div className="flex items-center justify-between mb-4 px-1">
-            <h3 className="text-[9px] font-black uppercase text-slate-600 tracking-[0.2em] leading-none">QUICK ASSIST</h3>
-            <div className="h-[1px] w-4 bg-slate-900/10 rounded-full" />
+            <h3 className="text-[11px] font-black uppercase text-slate-600 tracking-[0.2em] leading-none">QUICK ASSIST</h3>
+            <div className="h-[1px] w-4 bg-[#C44545]/30 rounded-full" />
           </div>
           <div className="grid grid-cols-2 gap-4">
              <motion.div 
                 whileTap={{scale:0.96}} 
-                onClick={() => navigate('/user/category/towing?label=Roadside Assistance')}
-                className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-5 flex flex-col gap-3 shadow-xl shadow-slate-200 border border-white/5 cursor-pointer"
-             >
-                <div className="h-10 w-10 bg-white/10 rounded-2xl flex items-center justify-center text-white backdrop-blur-sm border border-white/10">
-                  <Zap size={16} fill="currentColor" />
-                </div>
-                <span className="text-white text-[11px] font-black tracking-tight leading-none uppercase">Roadside Help</span>
-             </motion.div>
-             <motion.div 
-                whileTap={{scale:0.96}} 
                 onClick={() => navigate('/user/category/legal?label=Legal Support')}
-                className="bg-gradient-to-br from-neutral-800 to-neutral-700 rounded-[2rem] p-5 flex flex-col gap-3 shadow-xl shadow-neutral-200 border border-white/5 cursor-pointer"
+                className="bg-rose-50 rounded-[2rem] p-5 flex flex-col gap-3 shadow-xl shadow-[#C44545]/5 border border-rose-100 cursor-pointer"
              >
-                <div className="h-10 w-10 bg-white/10 rounded-2xl flex items-center justify-center text-white backdrop-blur-sm border border-white/10">
+                <div className="h-10 w-10 bg-white rounded-2xl flex items-center justify-center text-[#C44545] shadow-sm border border-rose-100">
                   <Shield size={16} />
                 </div>
-                <span className="text-white text-[11px] font-black tracking-tight leading-none uppercase">Legal Support</span>
+                <span className="text-[#C44545] text-[13px] font-black tracking-tight leading-none uppercase">Legal Support</span>
              </motion.div>
           </div>
         </section>
@@ -102,24 +92,24 @@ const Home = () => {
         {/* Tracking Module - Low Profile */}
         <section>
           <div className="flex items-center justify-between mb-4 px-1">
-            <h3 className="text-[9px] font-black uppercase text-slate-600 tracking-[0.2em]">LIVE ENGINE</h3>
+            <h3 className="text-[11px] font-black uppercase text-slate-600 tracking-[0.2em]">LIVE ENGINE</h3>
           </div>
           <motion.div 
             whileTap={{ scale: 0.98 }}
             className="bg-white border-2 border-slate-200 rounded-[1.4rem] p-3 flex items-center gap-3 active:scale-95 transition-all"
           >
-            <div className="h-9 w-9 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-lg shadow-slate-100">
+            <div className="h-9 w-9 bg-[#C44545] text-white rounded-xl flex items-center justify-center shadow-lg shadow-[#C44545]/20">
               <Clock size={16} strokeWidth={2.5} />
             </div>
             <div className="flex-1">
               <div className="flex justify-between items-center mb-0.5">
-                <h4 className="text-[10px] font-black text-slate-900 leading-none">Mechanic Dispatched</h4>
+                <h4 className="text-[12px] font-black text-slate-900 leading-none">Mechanic Dispatched</h4>
                 <div className="flex gap-0.5 animate-pulse">
                     <div className="h-1 w-2 bg-slate-400 rounded-full" />
                     <div className="h-1 w-1 bg-slate-200 rounded-full" />
                 </div>
               </div>
-              <span className="text-[8px] font-black text-slate-600 uppercase tracking-widest leading-none">Coming in 8 Mins</span>
+              <span className="text-[11px] font-black text-[#C44545] uppercase tracking-widest leading-none">Coming in 8 Mins</span>
             </div>
           </motion.div>
         </section>
@@ -127,15 +117,15 @@ const Home = () => {
         {/* Compact Trust Stats */}
         <div className="grid grid-cols-2 gap-2">
           {[
-            { label: "15k+", sub: "Users", icon: User, clr: "text-slate-800", bg: "bg-slate-100" },
-            { label: "500+", sub: "Pros", icon: Star, clr: "text-slate-900", bg: "bg-slate-50" },
+            { label: "15k+", sub: "Users", icon: User, clr: "text-[#C44545]", bg: "bg-white" },
+            { label: "500+", sub: "Pros", icon: Star, clr: "text-[#A33636]", bg: "bg-white" },
           ].map((item, i) => (
-            <div key={i} className="bg-white border-2 border-slate-200 rounded-[1.2rem] p-3 flex flex-col items-center gap-1.5 text-center">
+            <div key={i} className="bg-rose-50 border border-rose-100 rounded-[1.2rem] p-3 flex flex-col items-center gap-1.5 text-center">
               <div className={`h-8 w-8 ${item.bg} ${item.clr} rounded-xl flex items-center justify-center`}>
                 <item.icon size={14} strokeWidth={2.5} />
               </div>
-              <h4 className="text-[9px] font-black text-slate-900 uppercase tracking-tighter">{item.label}</h4>
-              <p className="text-[7px] font-bold text-slate-600 uppercase tracking-widest">{item.sub}</p>
+              <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-tighter">{item.label}</h4>
+              <p className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">{item.sub}</p>
             </div>
           ))}
         </div>

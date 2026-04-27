@@ -21,13 +21,13 @@ const AppBottomNav = () => {
         <motion.div 
           animate={isActive ? { scale: 1.05, y: -2 } : { scale: 1, y: 0 }}
           className={`h-9 w-9 rounded-2xl flex items-center justify-center transition-all ${
-            isActive ? "bg-slate-900 shadow-xl shadow-slate-900/20" : "bg-transparent text-neutral-500"
+            isActive ? "bg-white shadow-xl shadow-black/10 text-[#C44545]" : "bg-transparent text-white/70"
           }`}
         >
-          <Icon size={16} strokeWidth={isActive ? 3 : 2.5} className={isActive ? "text-white" : ""} />
+          <Icon size={16} strokeWidth={isActive ? 3 : 2.5} />
         </motion.div>
-        <span className={`text-[8px] font-black tracking-widest uppercase transition-colors ${
-          isActive ? "text-slate-900" : 'text-neutral-500'
+        <span className={`text-[11px] font-black tracking-widest uppercase transition-colors ${
+          isActive ? "text-white" : 'text-white'
         }`}>
           {label}
         </span>
@@ -36,11 +36,11 @@ const AppBottomNav = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[375px] z-[100] px-3 pb-1 pointer-events-none font-inter text-center">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[375px] z-[100] px-3 pb-2 pointer-events-none font-inter text-center">
       <motion.nav 
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-white/95 backdrop-blur-2xl rounded-[1.5rem] px-2 py-1.5 flex items-center justify-around shadow-2xl shadow-black/5 pointer-events-auto border-2 border-slate-200"
+        className="bg-[#C44545] rounded-[1.8rem] px-2 py-1.5 flex items-center justify-around shadow-2xl shadow-[#C44545]/30 pointer-events-auto"
       >
         {!isVendor && !isAdmin && (
           <>

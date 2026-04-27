@@ -21,14 +21,14 @@ const AdminUsers = () => {
   return (
     <div className="bg-neutral-50 min-h-screen pb-24 font-sans">
       {/* Header Section */}
-      <section className="px-5 py-6 bg-neutral-900 text-white rounded-b-[2.5rem] shadow-2xl">
+      <section className="px-5 py-6 bg-[#C44545] text-white rounded-b-[2.5rem] shadow-2xl">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <div className="h-10 w-10 bg-white rounded-2xl overflow-hidden flex items-center justify-center border border-white/10 shadow-xl cursor-pointer" onClick={() => navigate('/admin')}>
               <img src={logo} alt="Logo" className="w-full h-full object-cover p-1.5" />
             </div>
             <div className="flex flex-col gap-1">
-              <span className="text-[10px] font-black uppercase text-white/60 tracking-[0.2em]">Management</span>
+              <span className="text-[12px] font-black uppercase text-white/60 tracking-[0.2em]">Management</span>
               <h1 className="text-xl font-black tracking-tighter text-white">User Directory.</h1>
             </div>
           </div>
@@ -56,8 +56,8 @@ const AdminUsers = () => {
       {/* Users List */}
       <section className="px-4 py-8">
         <div className="flex items-center justify-between mb-6 px-1">
-          <h2 className="text-xs font-black text-neutral-900 uppercase tracking-[0.2em]">Registered Users</h2>
-          <span className="text-[10px] font-bold text-neutral-500">{usersList.length} total</span>
+          <h2 className="text-xs font-black text-[#C44545] uppercase tracking-[0.2em]">Registered Users</h2>
+          <span className="text-[12px] font-bold text-neutral-500">{usersList.length} total</span>
         </div>
 
         <div className="space-y-3">
@@ -73,8 +73,8 @@ const AdminUsers = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between">
-                    <h3 className="text-sm font-black tracking-tight text-neutral-900 truncate">{user.name}</h3>
-                    <div className={`px-2 py-0.5 rounded-lg text-[7px] font-black uppercase tracking-widest flex-shrink-0 ${
+                    <h3 className="text-sm font-black tracking-tight text-[#C44545] truncate">{user.name}</h3>
+                    <div className={`px-2 py-0.5 rounded-lg text-[11px] font-black uppercase tracking-widest flex-shrink-0 ${
                       user.status === 'Active' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
                     }`}>
                       {user.status}
@@ -82,7 +82,7 @@ const AdminUsers = () => {
                   </div>
                   <div className="flex items-center gap-1 mt-0.5 text-neutral-500">
                     <MapPin size={10} className="flex-shrink-0" />
-                    <span className="text-[9px] font-bold uppercase tracking-wider">{user.location}</span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider">{user.location}</span>
                   </div>
                 </div>
               </div>
@@ -92,13 +92,13 @@ const AdminUsers = () => {
                   <div className="h-7 w-7 bg-slate-50 rounded-lg flex items-center justify-center text-slate-400 border border-slate-100 flex-shrink-0">
                     <Mail size={12} />
                   </div>
-                  <span className="text-[9px] font-semibold text-slate-600 truncate">{user.email}</span>
+                  <span className="text-[11px] font-semibold text-slate-600 truncate">{user.email}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-7 w-7 bg-slate-50 rounded-lg flex items-center justify-center text-slate-400 border border-slate-100 flex-shrink-0">
                     <Phone size={12} />
                   </div>
-                  <span className="text-[9px] font-semibold text-slate-600 whitespace-nowrap">{user.phone}</span>
+                  <span className="text-[11px] font-semibold text-slate-600 whitespace-nowrap">{user.phone}</span>
                 </div>
               </div>
             </motion.div>

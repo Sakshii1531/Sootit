@@ -11,9 +11,12 @@
 
 :root {
   --app-max-width: 375px; 
-  --bg-primary: #FFFFFF;    /* Pure White Background */
-  --primary: #334155;       /* Sophisticated Dark Slate */
-  --accent: #DC2626;        /* Luxury Crimson */
+  --bg-primary: #FAFAFA;      /* Warm White Background */
+  --primary: #C44545;         /* Crimson Red */
+  --primary-dark: #A33636;    /* Deep Crimson - hover/press */
+  --primary-light: #F5E0E0;   /* Soft Rose - icon backgrounds */
+  --accent: #C44545;          /* Crimson Accent */
+  --border-warm: #E8E0E0;     /* Warm border */
 }
 
 html, body {
@@ -23,7 +26,7 @@ html, body {
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased overflow-x-hidden m-0 p-0;
+  @apply bg-[#FAFAFA] text-slate-900 antialiased overflow-x-hidden m-0 p-0;
   font-family: 'Inter', system-ui, sans-serif;
   overscroll-behavior-y: none; /* Prevent pull-to-refresh zoom/bounce */
 }
@@ -91,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Bottom Nav Glass (Higher transparency, tighter padding) */
 .nav-glass {
-  @apply bg-white/70 backdrop-blur-md border border-white/20;
+  @apply bg-white/70 backdrop-blur-md border border-rose-100/40;
 }
 
 /* Native style transitions */

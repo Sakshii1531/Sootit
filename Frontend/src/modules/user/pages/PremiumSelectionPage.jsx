@@ -23,7 +23,7 @@ const PremiumSelectionPage = () => {
                 </button>
                 <div>
                     <h2 className="text-xl font-black text-slate-900 tracking-tight leading-none mb-1">Premium Selection</h2>
-                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">All Experts In Focus</span>
+                    <span className="text-[12px] font-black text-slate-400 uppercase tracking-widest leading-none">All Experts In Focus</span>
                 </div>
             </header>
 
@@ -50,7 +50,7 @@ const PremiumSelectionPage = () => {
                             </div>
                             <div>
                                 <h4 className="text-white text-xl font-black tracking-tight leading-none mb-1">{p.name}</h4>
-                                <span className="text-white/60 text-[10px] font-black uppercase tracking-[0.1em] leading-none">{p.type} • {p.jobs} Active</span>
+                                <span className="text-white/60 text-[12px] font-black uppercase tracking-[0.1em] leading-none">{p.type} • {p.jobs} Active</span>
                             </div>
                         </div>
                     </motion.div>

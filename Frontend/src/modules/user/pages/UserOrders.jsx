@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const UserOrders = () => {
     const navigate = useNavigate();
     const orders = [
-        { id: "ORD-9821", expert: "Amit Vikram", type: "Expert Driver", date: "Today, 10:30 AM", status: "Active", icon: Navigation, clr: "bg-slate-900 text-white" },
+        { id: "ORD-9821", expert: "Amit Vikram", type: "Expert Driver", date: "Today, 10:30 AM", status: "Active", icon: Navigation, clr: "bg-[#C44545] text-white" },
         { id: "ORD-7712", expert: "Sharma Garage", type: "Full Service", date: "Yesterday, 04:15 PM", status: "Completed", icon: Wrench, clr: "bg-slate-100 text-slate-800" },
         { id: "ORD-6623", expert: "Towing Kings", type: "Emergency Tow", date: "02 Apr, 2024", status: "Cancelled", icon: Package, clr: "bg-neutral-50 text-neutral-400" },
     ];
@@ -34,24 +34,24 @@ const UserOrders = () => {
                                     <order.icon size={18} strokeWidth={2.5} />
                                 </div>
                                 <div className="flex flex-col">
-                                    <h3 className="text-sm font-black text-neutral-900 leading-none mb-1.5 underline decoration-black/5 underline-offset-4">{order.expert}</h3>
-                                    <span className="text-[10px] font-black uppercase text-neutral-400 tracking-widest leading-none">{order.type}</span>
+                                    <h3 className="text-[15px] font-black text-neutral-900 leading-none mb-1.5">{order.expert}</h3>
+                                    <span className="text-[13px] font-black uppercase text-neutral-500 tracking-widest leading-none">{order.type}</span>
                                 </div>
                             </div>
-                            <span className={`text-[8px] font-black uppercase tracking-widest px-2 py-1 rounded-lg ${
-                                order.status === 'Active' ? 'bg-slate-900 text-white' : 
-                                order.status === 'Completed' ? 'bg-neutral-800 text-white' : 'bg-neutral-100 text-neutral-400'
+                            <span className={`text-[12px] font-black uppercase tracking-widest px-3 py-1 rounded-lg ${
+                                order.status === 'Active' ? 'bg-[#C44545] text-white' : 
+                                order.status === 'Completed' ? 'bg-neutral-800 text-white' : 'bg-neutral-100 text-neutral-500'
                             }`}>
                                 {order.status}
                             </span>
                         </div>
                         
                         <div className="flex items-center justify-between pt-4 border-t border-black/[0.02] text-neutral-400">
-                           <div className="flex items-center gap-2 opacity-50">
+                           <div className="flex items-center gap-2 text-neutral-500">
                                <Clock size={12} strokeWidth={2.5} />
-                               <span className="text-[10px] font-bold uppercase tracking-widest">{order.date}</span>
+                               <span className="text-[13px] font-bold uppercase tracking-widest">{order.date}</span>
                            </div>
-                        <span className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em] leading-none">{order.id}</span>
+                        <span className="text-[13px] font-black uppercase text-slate-500 tracking-[0.2em] leading-none">{order.id}</span>
                         </div>
                     </motion.div>
                 ))}

@@ -43,7 +43,7 @@ const Loader = () => {
               ease: "linear",
               repeatDelay: 0.5
             }}
-            className="h-full bg-slate-900 dark:bg-slate-700"
+            className="h-full bg-[#C44545] dark:bg-rose-500"
           />
         </div>
       </div>

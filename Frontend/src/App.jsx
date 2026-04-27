@@ -7,6 +7,7 @@ import Lenis from 'lenis';
 import Loader from './shared/components/Loader';
 import AppHeader from './shared/components/Header'; // Fixed name
 import UserBottomNav from './shared/components/BottomNav'; // Renamed
+import ScrollToTop from './shared/components/ScrollToTop';
 
 // Modular Pages (Lazy Loaded for performance)
 const UserHome = lazy(() => import('./modules/user/pages/UserHome'));
@@ -162,11 +163,12 @@ function App() {
 
   return (
     <Router>
-      <div className="relative min-h-screen bg-slate-200/50 font-sans selection:bg-slate-900/30 selection:text-slate-900 antialiased">
+      <div className="relative min-h-screen bg-slate-200/50 font-sans selection:bg-[#C44545]/30 selection:text-[#C44545] antialiased">
         <AnimatePresence>
           {isLoading && <Loader key="loader" />}
         </AnimatePresence>
 
+        <ScrollToTop />
         {!isLoading && <AppContent />}
       </div>
     </Router>

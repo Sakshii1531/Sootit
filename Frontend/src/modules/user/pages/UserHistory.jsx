@@ -32,13 +32,13 @@ const UserHistory = () => {
                                 <tx.icon size={18} strokeWidth={2.5} />
                             </div>
                             <div className="flex flex-col">
-                                <h4 className="text-[11px] font-black text-neutral-900 uppercase tracking-widest leading-none mb-1.5">{tx.type}</h4>
-                                <span className="text-[8px] font-bold text-neutral-400 uppercase tracking-widest">{tx.date}</span>
+                                <h4 className="text-[13px] font-black text-neutral-900 uppercase tracking-widest leading-none mb-1.5">{tx.type}</h4>
+                                <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest">{tx.date}</span>
                             </div>
                         </div>
                         <div className="text-right">
-                            <h4 className={`text-[12px] font-black mb-1 ${tx.amount.startsWith('+') ? 'text-slate-900' : 'text-neutral-900 opacity-60'}`}>{tx.amount}</h4>
-                            <span className="text-[7px] font-black uppercase text-neutral-300 tracking-tighter">TXID: {tx.id}</span>
+                            <h4 className={`text-[14px] font-black mb-1 ${tx.amount.startsWith('+') ? 'text-slate-900' : 'text-neutral-900 opacity-60'}`}>{tx.amount}</h4>
+                            <span className="text-[10px] font-black uppercase text-neutral-300 tracking-tighter">TXID: {tx.id}</span>
                         </div>
                     </motion.div>
                 ))}

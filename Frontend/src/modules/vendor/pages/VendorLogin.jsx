@@ -60,28 +60,28 @@ const VendorLogin = ({ isEmbedded = false }) => {
         <h1 className={`${isEmbedded ? 'text-2xl' : 'text-3xl'} font-black tracking-tighter leading-tight mb-2 uppercase text-slate-900`}>
           {isEmbedded ? "Partner Login" : <>Partner<br/>Login.</>}
         </h1>
-        <p className={`${isEmbedded ? 'text-xs' : 'text-sm'} font-bold text-neutral-400 mb-8 tracking-tight opacity-90 leading-snug`}>
+        <p className={`${isEmbedded ? 'text-[15px]' : 'text-sm'} font-bold text-neutral-600 mb-8 tracking-tight leading-snug`}>
            {step === 1 ? "Enter your phone number to receive OTP" : `Enter the 4-digit code sent to +91 ${phoneNumber}`}
         </p>
 
         {step === 1 ? (
           <form onSubmit={handleSendOTP} className="space-y-4">
             <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase text-neutral-400 tracking-[0.15em] pl-1 block">Phone Number</label>
-              <div className="flex bg-neutral-50/50 border-2 border-neutral-100 rounded-[1.2rem] px-5 py-4 focus-within:border-slate-900 focus-within:bg-white transition-all shadow-sm">
-                 <span className="text-base font-black text-neutral-400 mr-3">+91</span>
+              <label className="text-[13px] font-black uppercase text-neutral-600 tracking-[0.15em] pl-1 block">Phone Number</label>
+              <div className="flex bg-neutral-50/50 border-2 border-neutral-100 rounded-[1.2rem] px-5 py-4 focus-within:border-[#C44545] focus-within:bg-white transition-all shadow-sm">
+                 <span className="text-base font-black text-neutral-700 mr-3">+91</span>
                  <input 
                    type="tel" 
                    maxLength={10}
                    value={phoneNumber}
                    onChange={(e) => setPhoneNumber(e.target.value)}
                    placeholder="00000 00000" 
-                   className="bg-transparent text-base font-bold w-full focus:outline-none placeholder:text-neutral-300"
+                   className="bg-transparent text-base font-bold w-full focus:outline-none placeholder:text-neutral-400 text-neutral-900"
                  />
               </div>
             </div>
             
-            <button type="submit" className="w-full bg-slate-900 text-white rounded-[1.2rem] py-4 font-black uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 active:scale-95 transition-all mt-6 shadow-2xl shadow-slate-900/20">
+            <button type="submit" className="w-full bg-[#C44545] text-white rounded-[1.2rem] py-4 font-black uppercase tracking-widest text-[15px] flex items-center justify-center gap-2 active:scale-95 transition-all mt-6">
               GET OTP <ArrowRight size={16} strokeWidth={3} />
             </button>
           </form>
@@ -97,24 +97,24 @@ const VendorLogin = ({ isEmbedded = false }) => {
                   value={digit}
                   onChange={(e) => handleOtpChange(idx, e.target.value)}
                   onKeyUp={(e) => e.key === 'Backspace' && idx > 0 && !digit && document.getElementById(`vendor-otp-${idx-1}`).focus()}
-                  className="w-14 h-16 bg-white border-2 border-slate-300 rounded-xl text-center text-2xl font-black focus:outline-none focus:border-slate-900 transition-all shadow-sm"
+                  className="w-14 h-16 bg-white border-2 border-slate-300 rounded-xl text-center text-2xl font-black focus:outline-none focus:border-[#C44545] transition-all shadow-sm"
                 />
               ))}
             </div>
 
             <div className="text-center">
-               <button type="button" onClick={() => setStep(1)} className="text-[10px] font-black uppercase text-slate-500 tracking-widest border-b-2 border-slate-100 pb-0.5">Resend OTP ?</button>
+               <button type="button" onClick={() => setStep(1)} className="text-[13px] font-black uppercase text-slate-600 tracking-widest border-b-2 border-slate-200 pb-0.5">Resend OTP ?</button>
             </div>
 
-            <button type="submit" className="w-full bg-slate-900 text-white rounded-[1.2rem] py-4 font-black uppercase tracking-widest text-[12px] flex items-center justify-center gap-2 active:scale-95 transition-all mt-4 shadow-xl shadow-slate-900/10">
+            <button type="submit" className="w-full bg-[#C44545] text-white rounded-[1.2rem] py-4 font-black uppercase tracking-widest text-[15px] flex items-center justify-center gap-2 active:scale-95 transition-all mt-4">
               VERIFY & LOGIN
             </button>
           </form>
         )}
 
         <div className="text-center mt-10">
-          <p className="text-[11px] font-bold text-neutral-400">
-             Not a registered vendor? <Link to="/vendor/register" className="text-slate-900 border-b-2 border-slate-200 pb-0.5 ml-1">Apply here</Link>
+          <p className="text-[14px] font-bold text-neutral-600">
+             Not a registered vendor? <Link to="/vendor/register" className="text-[#C44545] font-black border-b-2 border-[#C44545]/30 pb-0.5 ml-1">Apply here</Link>
           </p>
         </div>
       </motion.div>

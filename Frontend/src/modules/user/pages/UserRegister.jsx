@@ -21,7 +21,7 @@ const UserRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
         >
           <ArrowLeft size={20} className="text-slate-900" strokeWidth={2.5} />
         </button>
-        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-300">Stage 01/01</span>
+        <span className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-300">Stage 01/01</span>
       </div>
 
       <div className="flex-1 flex flex-col px-8">
@@ -47,7 +47,7 @@ const UserRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
           <form className="space-y-5">
             {/* Input Group: Name */}
             <div className="relative group">
-              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-slate-900 transition-colors">
+              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#C44545] transition-colors">
                 <User size={18} strokeWidth={2.5} />
               </div>
               <input 
@@ -59,7 +59,7 @@ const UserRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
 
             {/* Input Group: Phone */}
             <div className="relative group">
-              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-slate-900 transition-colors">
+              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-[#C44545] transition-colors">
                 <Phone size={18} strokeWidth={2.5} />
               </div>
               <div className="flex bg-white border border-black/[0.03] rounded-3xl overflow-hidden focus-within:border-slate-900/20 focus-within:shadow-xl focus-within:shadow-black/[0.02] transition-all">
@@ -80,11 +80,11 @@ const UserRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
               <button 
                 type="button" 
                 onClick={() => isEmbedded ? onSwitchToLogin() : navigate('/user/login')} 
-                className="w-full bg-slate-900 h-16 rounded-[1.8rem] flex items-center justify-between px-8 shadow-2xl shadow-slate-900/20 active:scale-[0.98] transition-all group"
+                className="w-full bg-[#C44545] h-16 rounded-[1.8rem] flex items-center justify-between px-8 shadow-2xl shadow-[#C44545]/20 active:scale-[0.98] transition-all group"
               >
                 <div className="flex items-center gap-3">
                   <ShieldCheck size={20} className="text-white/40" />
-                  <span className="text-white text-xs font-black uppercase tracking-[0.2em]">Secure Sign Up</span>
+                  <span className="text-white text-[13px] font-black uppercase tracking-[0.2em]">Secure Sign Up</span>
                 </div>
                 <div className="h-8 w-8 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-colors">
                   <ArrowRight size={18} strokeWidth={3} className="text-white group-hover:text-slate-900" />
@@ -95,11 +95,11 @@ const UserRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
 
           {/* Footer Social/Login */}
           <div className="mt-12 text-center">
-            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+            <p className="text-[13px] font-bold text-slate-400 uppercase tracking-widest">
               Already have an account? 
               <button 
                 onClick={() => isEmbedded ? onSwitchToLogin() : navigate('/user/login')} 
-                className="text-slate-900 ml-2 border-b-2 border-slate-100 pb-0.5"
+                className="text-[#C44545] ml-2 border-b-2 border-[#C44545]/30 pb-0.5"
               >
                 Login
               </button>
