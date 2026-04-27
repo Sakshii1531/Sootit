@@ -12,6 +12,8 @@ const VendorPersonal = () => {
   const [operatingCities, setOperatingCities] = useState([]);
   const [drivePreference, setDrivePreference] = useState('Permanent');
   const [mechanicTypes, setMechanicTypes] = useState([]);
+  const [ownerVehicleType, setOwnerVehicleType] = useState('Sedan/SUV');
+  const [ownerSalary, setOwnerSalary] = useState('');
 
   const languages = ['Tamil', 'Marathi', 'Hindi', 'English', 'Bengali', 'Gujarati', 'Kannada', 'Telugu'];
   const mechanicOptions = [
@@ -65,7 +67,11 @@ const VendorPersonal = () => {
     }));
     window.dispatchEvent(new Event('vendor_data_updated'));
     
-    navigate('/vendor');
+    if (role === 'owner') {
+        navigate('/owner-dashboard');
+    } else {
+        navigate('/vendor');
+    }
   };
 
   return (
@@ -162,6 +168,61 @@ const VendorPersonal = () => {
                                             {pref}
                                         </button>
                                     ))}
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* Owner Specific Fields */}
+                    <AnimatePresence>
+                        {role === 'owner' && (
+                            <motion.div 
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="space-y-6 pt-2 overflow-hidden"
+                            >
+                                <div className="space-y-3">
+                                    <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">Vehicle Type</span>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        {['Sedan/SUV', 'Luxury', 'Truck/LCV', 'Bus/Tempo'].map(type => (
+                                            <button 
+                                                key={type} 
+                                                type="button" 
+                                                onClick={() => setOwnerVehicleType(type)}
+                                                className={`py-4 border rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all ${ownerVehicleType === type ? 'bg-[#C44545] text-white border-[#C44545] shadow-lg shadow-[#C44545]/20' : 'border-slate-100 bg-white text-slate-400'}`}
+                                            >
+                                                {type}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">Monthly Salary (Budget)</span>
+                                    <div className="bg-white border border-rose-100 rounded-3xl p-5 flex items-center gap-4 shadow-sm">
+                                        <span className="text-lg font-black text-[#C44545]">₹</span>
+                                        <input 
+                                            type="number" 
+                                            placeholder="e.g. 15000" 
+                                            value={ownerSalary}
+                                            onChange={(e) => setOwnerSalary(e.target.value)}
+                                            className="bg-transparent text-[15px] font-bold text-slate-800 w-full focus:outline-none placeholder:text-neutral-400"
+                                            required={role === 'owner'}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">Reporting Address</span>
+                                    <div className="bg-white border border-rose-100 rounded-3xl p-5 flex items-start gap-4 shadow-sm">
+                                        <MapPin size={18} className="text-[#C44545] mt-1" strokeWidth={2.5} />
+                                        <textarea 
+                                            placeholder="Enter full address where driver should report..." 
+                                            className="bg-transparent text-[15px] font-bold text-slate-800 w-full focus:outline-none placeholder:text-neutral-400 min-h-[80px] resize-none"
+                                            required={role === 'owner'}
+                                        />
+                                    </div>
                                 </div>
                             </motion.div>
                         )}

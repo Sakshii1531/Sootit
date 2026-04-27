@@ -68,11 +68,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
                         onClick={() => {
                             setRole(r.id);
                             localStorage.setItem('temp_vendor_role', r.id);
-                            if (r.id === 'owner') {
-                                navigate('/owner-dashboard');
-                            } else {
-                                navigate('/vendor/register/personal');
-                            }
+                            navigate('/vendor/register/personal');
                         }}
                         className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-[#C44545] bg-[#C44545] text-white' : 'border-neutral-200 bg-white text-neutral-800 shadow-sm'}`}
                     >
