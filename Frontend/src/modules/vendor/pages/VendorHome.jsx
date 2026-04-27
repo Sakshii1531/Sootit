@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, Shield, Zap, TrendingUp, Settings, DollarSign, Activity, Briefcase, Wallet, MapPin, CheckCircle2, Wrench, Truck, FileText, Navigation } from "lucide-react";
+import { Star, Shield, Zap, TrendingUp, Settings, DollarSign, Activity, Briefcase, Wallet, MapPin, CheckCircle2, Wrench, Truck, FileText, Navigation, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { getVendorData } from "../utils/vendorStore";
 import { getVendorConfig } from "../utils/vendorConfig";
@@ -90,7 +90,7 @@ const VendorHome = () => {
               </div>
               <div>
                 <h3 className="text-xs font-black tracking-tight text-neutral-900 mb-1">{role.label}</h3>
-                <span className={`text-[11px] font-black uppercase tracking-widest ${role.status === 'ACTIVE' ? 'text-green-500' : 'text-neutral-300'}`}>
+                <span className={`text-[11px] font-black uppercase tracking-widest ${role.status === 'ACTIVE' ? 'text-green-500' : 'text-neutral-500'}`}>
                   {role.status}
                 </span>
               </div>
@@ -123,42 +123,68 @@ const VendorHome = () => {
           </div>
         ))}
       </section>
-
-      {/* Role Specialized Leads */}
-      <section className="px-4 py-4">
-        <div className="flex justify-between items-center mb-6 pl-1 pr-1 border-l-4 border-[#C44545] h-4 flex-row">
-           <h2 className="text-[13px] font-black text-neutral-900 uppercase tracking-[0.25em]">Nearby Leads</h2>
-           <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">{config.featuredJobs.length} New</span>
-        </div>
-        
-        <div className="space-y-4">
-          {config.featuredJobs.map((job, i) => (
-            <div key={i} className="bg-rose-50 p-5 rounded-[2.5rem] border border-rose-100 shadow-xl shadow-black/[0.01] flex flex-col gap-4">
-              <div className="flex justify-between items-start">
-                 <div className="flex-1">
-                    <span className="text-[11px] font-black text-neutral-400 uppercase tracking-[0.15em] mb-1 block">{job.id}</span>
-                    <h3 className="text-sm font-black tracking-tight mb-2">{job.task}</h3>
-                    <div className="flex items-center gap-2">
-                        <MapPin size={10} className="text-neutral-400" />
-                        <span className="text-[12px] font-bold text-neutral-500">{job.name} • <span className="text-slate-900 font-extrabold">{job.distance}</span></span>
-                    </div>
-                 </div>
-                 <span className="text-[11px] font-bold text-neutral-300">{job.time}</span>
-              </div>
-              
-              <div className="bg-neutral-50 p-3 rounded-2xl flex items-center justify-between border border-neutral-100">
-                 <div className="flex items-center gap-2 pl-1">
-                    <Shield size={12} className="text-slate-900" />
-                    <span className="text-[11px] font-black uppercase text-slate-900 tracking-tighter">Verified Lead</span>
-                 </div>
-                 <button className="bg-[#C44545] text-white px-6 py-2 rounded-xl text-[12px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-lg">
-                    Apply
-                 </button>
-              </div>
+      {/* --- SEPARATE SECTION: DRIVER JOBS MARKETPLACE --- */}
+      {vendor.profile.role === 'driver' && (
+        <section className="mt-8 pt-10 pb-12 bg-slate-100/80 border-t border-slate-200 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+          <div className="px-6">
+            <div className="flex flex-col gap-1 mb-8">
+               <div className="flex items-center gap-2">
+                 <div className="h-2 w-8 bg-[#C44545] rounded-full" />
+                 <span className="text-[11px] font-black uppercase text-[#C44545] tracking-[0.3em]">Marketplace</span>
+               </div>
+               <h2 className="text-2xl font-black text-slate-900 tracking-tighter">Available Driver Jobs.</h2>
+               <p className="text-[13px] font-bold text-slate-400">Direct requirements posted by vehicle owners near you.</p>
             </div>
-          ))}
-        </div>
-      </section>
+            
+            <div className="space-y-5">
+              {[
+                { id: 1, vehicle: 'Sedan/SUV', location: 'Mumbai, MH', salary: '₹18,000/mo', desc: 'Required permanent driver for family car (Automatic).' },
+                { id: 2, vehicle: 'Luxury', location: 'Pune, MH', salary: '₹25,000/mo', desc: 'Need experienced driver for BMW 5 Series (Manual/Auto).' },
+              ].map((job) => (
+                <motion.div 
+                  key={job.id} 
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  className="bg-white p-7 rounded-[2.8rem] border border-slate-200 shadow-xl shadow-black/[0.02] flex flex-col gap-6 relative group"
+                >
+                  <div className="flex justify-between items-start">
+                     <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="bg-rose-50 text-[#C44545] text-[9px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest border border-rose-100">
+                            {job.vehicle}
+                          </span>
+                          <span className="bg-green-50 text-green-600 text-[9px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest border border-green-100">
+                            New Post
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-black tracking-tight text-slate-900 mb-3 leading-tight">{job.desc}</h3>
+                        
+                        <div className="flex items-center gap-4 flex-wrap">
+                            <div className="flex items-center gap-2 text-slate-500">
+                              <MapPin size={14} className="text-neutral-400" />
+                              <span className="text-[13px] font-bold">{job.location}</span>
+                            </div>
+                            <div className="h-4 w-[1px] bg-slate-200" />
+                            <div className="flex items-center gap-2 text-[#C44545]">
+                              <DollarSign size={14} strokeWidth={3} />
+                              <span className="text-[13px] font-black">{job.salary}</span>
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <button 
+                    onClick={() => alert("Premium Unlock Required: Please recharge your wallet to view contact details.")}
+                    className="w-full bg-[#C44545] text-white py-4 rounded-2xl text-[12px] font-black uppercase tracking-widest active:scale-95 transition-all shadow-lg shadow-[#C44545]/20 flex items-center justify-center gap-3"
+                  >
+                    View Contact Details <ArrowRight size={16} strokeWidth={3} />
+                  </button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 };

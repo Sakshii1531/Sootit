@@ -43,6 +43,11 @@ const VendorPersonal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (nativeLanguages.length === 0) {
+        alert("Please select or enter at least one language");
+        return;
+    }
+
     if (role === 'mechanic' && mechanicTypes.length === 0) {
         alert("Please select at least one Expertise type");
         return;
@@ -198,9 +203,10 @@ const VendorPersonal = () => {
                     <User size={18} className="text-[#C44545]" strokeWidth={2.5} />
                     <input 
                         type="text" 
+                        value={nativeLanguages.join(', ')}
+                        onChange={(e) => setNativeLanguages(e.target.value.split(',').map(l => l.trim()).filter(l => l !== ''))}
                         placeholder="Enter languages (e.g. Tamil, Marathi, Hindi...)" 
                         className="bg-transparent text-[15px] font-bold text-slate-800 w-full focus:outline-none placeholder:text-neutral-400"
-                        required
                     />
                 </div>
                 <div className="flex flex-wrap gap-2 pt-1">

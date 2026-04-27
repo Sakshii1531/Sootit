@@ -46,6 +46,8 @@ const AdminApprovals = lazy(() => import('./modules/admin/pages/AdminApprovals')
 const AdminSettings = lazy(() => import('./modules/admin/pages/AdminSettings'));
 const AdminBanners = lazy(() => import('./modules/admin/pages/AdminBanners'));
 const AdminLogin = lazy(() => import('./modules/admin/pages/AdminLogin'));
+const OwnerDashboard = lazy(() => import('./modules/owner/pages/OwnerDashboard'));
+const RequirementForm = lazy(() => import('./modules/owner/pages/RequirementForm'));
 import { AdminSecurity, AdminNotifications, AdminPlatform, AdminProfile } from './modules/admin/pages/AdminSubSettings';
 
 // Page Transition Component
@@ -102,6 +104,10 @@ const AppRoutes = () => {
           <Route path="/vendor/profile" element={<ModuleWrapper type="vendor"><VendorProfile /></ModuleWrapper>} />
           <Route path="/vendor/kyc" element={<ModuleWrapper type="vendor"><VendorKYC /></ModuleWrapper>} />
           <Route path="/vendor/roles" element={<ModuleWrapper type="vendor"><VendorRoles /></ModuleWrapper>} />
+          
+          {/* Owner App Module */}
+          <Route path="/owner-dashboard" element={<ModuleWrapper type="owner"><OwnerDashboard /></ModuleWrapper>} />
+          <Route path="/post-requirement" element={<ModuleWrapper type="owner"><RequirementForm /></ModuleWrapper>} />
           
           {/* Admin App Module */}
           <Route path="/admin/login" element={<ModuleWrapper type="admin"><AdminLogin /></ModuleWrapper>} />

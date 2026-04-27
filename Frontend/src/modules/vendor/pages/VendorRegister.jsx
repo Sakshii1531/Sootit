@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, User, Navigation, Wrench, Shield, Briefcase, FileText, Truck, Phone, ArrowRight } from "lucide-react";
+import { ArrowLeft, User, Navigation, Wrench, Shield, Briefcase, FileText, Truck, Phone, ArrowRight, Car } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -15,6 +15,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
     { id: 'towing', label: 'Towing', icon: Truck, desc: '24/7 recovery service' },
     { id: 'rto', label: 'RTO Agent', icon: FileText, desc: 'Paperwork assistant' },
     { id: 'legal', label: 'Legal Advisor', icon: Briefcase, desc: 'Vehicle law expert' },
+    { id: 'owner', label: 'Owner', icon: Car, desc: 'Hire drivers for your vehicles' },
   ];
 
   const handleRegister = (e) => {
@@ -67,7 +68,11 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
                         onClick={() => {
                             setRole(r.id);
                             localStorage.setItem('temp_vendor_role', r.id);
-                            navigate('/vendor/register/personal');
+                            if (r.id === 'owner') {
+                                navigate('/owner-dashboard');
+                            } else {
+                                navigate('/vendor/register/personal');
+                            }
                         }}
                         className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-[#C44545] bg-[#C44545] text-white' : 'border-neutral-200 bg-white text-neutral-800 shadow-sm'}`}
                     >
