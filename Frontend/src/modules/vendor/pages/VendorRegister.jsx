@@ -20,7 +20,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
   const handleRegister = (e) => {
     e.preventDefault();
     localStorage.setItem('temp_vendor_role', role);
-    isEmbedded ? onSwitchToLogin() : navigate('/vendor/login');
+    navigate('/vendor/register/personal');
   };
 
   const containerClasses = isEmbedded 
@@ -38,8 +38,8 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
           <ArrowLeft size={20} className="text-slate-900" strokeWidth={2.5} />
         </button>
         <div className="flex flex-col items-end">
-            <span className="text-[12px] font-black uppercase tracking-[0.2em] text-neutral-500">Partner Application</span>
-            <span className="text-[13px] font-bold text-slate-900">Step 01 of 02</span>
+            <span className="text-[12px] font-black uppercase tracking-[0.2em] text-[#C44545]">Partner Program</span>
+            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">Sootit Network</span>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
             <p className="text-[15px] font-bold text-neutral-600">Select your expertise and build your business with Sootit.</p>
           </div>
 
-          <form onSubmit={handleRegister} className="space-y-8">
+          <form onSubmit={handleRegister} className="space-y-12">
             {/* Roles Micro-Grid */}
             <div className="space-y-4">
                 <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">What is your role?</span>
@@ -64,7 +64,11 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
                     <motion.div 
                         key={r.id} 
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => setRole(r.id)}
+                        onClick={() => {
+                            setRole(r.id);
+                            localStorage.setItem('temp_vendor_role', r.id);
+                            navigate('/vendor/register/personal');
+                        }}
                         className={`p-5 rounded-[2rem] border-2 cursor-pointer transition-all flex items-center gap-5 ${role === r.id ? 'border-[#C44545] bg-[#C44545] text-white' : 'border-neutral-200 bg-white text-neutral-800 shadow-sm'}`}
                     >
                         <div className={`h-12 w-12 rounded-2xl flex items-center justify-center transition-colors ${role === r.id ? 'bg-white/10 text-white' : 'bg-neutral-100 text-neutral-500'}`}>
@@ -76,39 +80,6 @@ const VendorRegister = ({ isEmbedded = false, onSwitchToLogin }) => {
                         </div>
                     </motion.div>
                 ))}
-                </div>
-            </div>
-
-            {/* Direct Information */}
-            <div className="space-y-4 pt-4">
-                <span className="text-[13px] font-black uppercase tracking-widest text-neutral-700 pl-2">Personal Details</span>
-                <div className="space-y-3">
-                    <div className="bg-white border border-black/[0.03] rounded-3xl p-5 flex items-center gap-4 shadow-sm">
-                        <User size={18} className="text-neutral-400" strokeWidth={2.5} />
-                        <input type="text" placeholder="Full Name" className="bg-transparent text-[15px] font-bold text-slate-900 w-full focus:outline-none placeholder:text-neutral-400" />
-                    </div>
-                    <div className="bg-white border border-black/[0.03] rounded-3xl p-5 flex items-center gap-4 shadow-sm">
-                        <Phone size={18} className="text-neutral-400" strokeWidth={2.5} />
-                        <div className="flex items-center">
-                            <span className="text-[15px] font-black text-slate-900 mr-2">+91</span>
-                            <div className="h-4 w-[1px] bg-slate-200 mr-3" />
-                            <input type="tel" maxLength={10} placeholder="Mobile Number" className="bg-transparent text-[15px] font-bold text-slate-900 w-full focus:outline-none placeholder:text-neutral-400" />
-                        </div>
-                    </div>
-
-                    <AnimatePresence>
-                        {role === 'driver' && (
-                        <motion.div 
-                            initial={{ opacity: 0, height: 0 }} 
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-5 flex items-center gap-4"
-                        >
-                            <FileText size={18} className="text-neutral-400" strokeWidth={2.5} />
-                            <input type="text" placeholder="Driving License Number" className="bg-transparent text-[15px] font-bold text-slate-800 w-full focus:outline-none placeholder:text-neutral-400 uppercase" />
-                        </motion.div>
-                        )}
-                    </AnimatePresence>
                 </div>
             </div>
             

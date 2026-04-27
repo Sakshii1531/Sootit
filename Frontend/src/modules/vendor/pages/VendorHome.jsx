@@ -32,7 +32,7 @@ const VendorHome = () => {
       <section className="px-4 pt-6 pb-8 bg-[#C44545] text-white rounded-b-[2.5rem] shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 h-40 w-40 bg-white/5 rounded-full blur-3xl -mr-20 -mt-10" />
         <div className="grid grid-cols-2 gap-4 relative z-10">
-          <div className="bg-white/[0.08] p-5 rounded-[2rem] border border-white/5 backdrop-blur-md">
+          <div className="bg-rose-50/10 p-5 rounded-[2rem] border border-white/20 backdrop-blur-md">
             <div className="flex items-center gap-2 mb-3">
               <div className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center">
                 <Activity size={12} className="text-white/80" />
@@ -43,7 +43,7 @@ const VendorHome = () => {
               <span className="text-2xl font-black tracking-tighter">Instant</span>
             </div>
           </div>
-          <div className="bg-white/[0.08] p-5 rounded-[2rem] border border-white/5 backdrop-blur-md">
+          <div className="bg-rose-50/10 p-5 rounded-[2rem] border border-white/20 backdrop-blur-md">
             <div className="flex items-center gap-2 mb-3">
               <div className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center">
                 <Zap size={12} className="text-white/80" />
@@ -59,17 +59,17 @@ const VendorHome = () => {
 
       {/* Role Profile Card with Toggle */}
       <section className="px-4 py-6 -mt-3 relative z-20">
-         <div className="bg-neutral-900 text-white p-5 rounded-[2rem] flex items-center justify-between shadow-2xl shadow-black/10">
+         <div className="bg-[#C44545] text-white p-5 rounded-[2rem] flex items-center justify-between shadow-2xl shadow-[#C44545]/20">
             <div className="flex items-center gap-4">
-               <div className="h-12 w-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/5">
-                  <config.icon size={22} className="text-white/80" strokeWidth={2.5} />
+               <div className="h-12 w-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/10">
+                  <config.icon size={22} className="text-white" strokeWidth={2.5} />
                </div>
                <div>
-                  <h3 className="text-[13px] font-bold uppercase tracking-[0.25em] mb-1 text-white">{config.label} Profile</h3>
-                  <p className="text-[12px] font-semibold text-white/50">Receiving leads in {config.leadsRange}</p>
+                  <h3 className="text-[13px] font-black uppercase tracking-[0.25em] mb-1 text-white">Online Status</h3>
+                  <p className="text-[12px] font-bold text-white/70">Receiving leads in {config.leadsRange}</p>
                </div>
             </div>
-            <div className="h-6 w-11 bg-slate-800 rounded-full relative cursor-pointer shadow-inner">
+            <div className="h-6 w-11 bg-white/20 rounded-full relative cursor-pointer shadow-inner border border-white/10">
                <div className="absolute right-0.5 top-0.5 h-5 w-5 bg-white rounded-full shadow-lg"></div>
             </div>
          </div>
@@ -83,7 +83,7 @@ const VendorHome = () => {
             <motion.div 
               key={idx}
               whileTap={{ scale: 0.96 }}
-              className="bg-white p-5 rounded-[2.5rem] border border-slate-300 shadow-xl shadow-black/[0.01] flex flex-col gap-4 relative group"
+              className="bg-rose-50 p-5 rounded-[2.5rem] border border-rose-100 shadow-xl shadow-black/[0.01] flex flex-col gap-4 relative group"
             >
               <div className={`h-12 w-12 rounded-2xl flex items-center justify-center ${role.bg} ${role.color} shadow-inner`}>
                 <role.icon size={22} strokeWidth={2.5} />
@@ -103,7 +103,7 @@ const VendorHome = () => {
       <section className="px-4 py-6">
         <h2 className="text-[13px] font-black text-neutral-900 uppercase tracking-[0.25em] mb-6 pl-1 border-l-4 border-[#C44545] h-4 flex items-center">Direct Hire Requests</h2>
         {config.directRequests.map((req, idx) => (
-          <div key={idx} className="bg-neutral-50 border border-slate-300 p-6 rounded-[2.5rem] relative overflow-hidden group">
+          <div key={idx} className="bg-rose-50 border border-rose-100 p-6 rounded-[2.5rem] relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4">
               <span className="text-[11px] font-black text-neutral-400">{req.time}</span>
             </div>
@@ -133,7 +133,7 @@ const VendorHome = () => {
         
         <div className="space-y-4">
           {config.featuredJobs.map((job, i) => (
-            <div key={i} className="bg-white p-5 rounded-[2.5rem] border border-slate-300 shadow-xl shadow-black/[0.01] flex flex-col gap-4">
+            <div key={i} className="bg-rose-50 p-5 rounded-[2.5rem] border border-rose-100 shadow-xl shadow-black/[0.01] flex flex-col gap-4">
               <div className="flex justify-between items-start">
                  <div className="flex-1">
                     <span className="text-[11px] font-black text-neutral-400 uppercase tracking-[0.15em] mb-1 block">{job.id}</span>

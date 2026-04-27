@@ -45,9 +45,9 @@ const VendorJobs = () => {
          </div>
          <h1 className="text-2xl font-black mb-3 text-neutral-900 tracking-tighter">Job Board.</h1>
          <div className="flex gap-2">
-            <div className="flex-1 bg-neutral-50 border border-neutral-200/50 rounded-2xl px-4 py-3 flex items-center gap-3">
-               <Search size={18} className="text-neutral-400" />
-               <input type="text" placeholder={`Search ${config.label.toLowerCase()} leads...`} className="bg-transparent text-sm font-bold w-full focus:outline-none" />
+            <div className="flex-1 bg-rose-50 border border-rose-100 rounded-2xl px-4 py-3 flex items-center gap-3">
+               <Search size={18} className="text-[#C44545]" strokeWidth={2.5} />
+               <input type="text" placeholder={`Search ${config.label.toLowerCase()} leads...`} className="bg-transparent text-sm font-bold w-full focus:outline-none placeholder:text-[#C44545]/50" />
             </div>
              <button className="h-12 w-12 bg-[#C44545] rounded-2xl flex items-center justify-center text-white active:scale-95 transition-transform">
                 <Filter size={20} />
@@ -63,9 +63,9 @@ const VendorJobs = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             key={job.id} 
-            className="bg-white border border-slate-200 rounded-[2.5rem] p-5 shadow-xl shadow-black/[0.01] hover:shadow-black/[0.03] hover:border-slate-300 transition-all relative overflow-hidden group"
+            className="bg-rose-50 border border-rose-100 rounded-[2.5rem] p-5 shadow-xl shadow-black/[0.01] hover:shadow-black/[0.03] transition-all relative overflow-hidden group"
           >
-             <div className="absolute top-0 right-0 h-20 w-20 bg-neutral-50 rounded-bl-[3rem] -mr-10 -mt-10" />
+             <div className="absolute top-0 right-0 h-20 w-20 bg-white/40 rounded-bl-[3rem] -mr-10 -mt-10" />
              
              <div className="flex justify-between items-start mb-2 relative z-10">
                  <div className="flex items-center gap-2">

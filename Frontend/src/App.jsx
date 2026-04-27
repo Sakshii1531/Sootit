@@ -33,6 +33,8 @@ const VendorJobs = lazy(() => import('./modules/vendor/pages/VendorJobs'));
 const VendorEarnings = lazy(() => import('./modules/vendor/pages/VendorEarnings'));
 const VendorSettings = lazy(() => import('./modules/vendor/pages/VendorSettings'));
 const VendorProfile = lazy(() => import('./modules/vendor/pages/VendorProfile'));
+const VendorPersonal = lazy(() => import('./modules/vendor/pages/VendorPersonal'));
+const VendorExpertise = lazy(() => import('./modules/vendor/pages/VendorExpertise'));
 const VendorKYC = lazy(() => import('./modules/vendor/pages/VendorKYC'));
 const VendorRoles = lazy(() => import('./modules/vendor/pages/VendorRoles'));
 const AdminDashboard = lazy(() => import('./modules/admin/pages/AdminDashboard'));
@@ -58,7 +60,7 @@ const AppRoutes = () => {
     <Suspense fallback={<div className="h-screen w-full flex items-center justify-center bg-white">
       <div className="h-8 w-8 border-4 border-slate-900 border-t-transparent rounded-full animate-spin" />
     </div>}>
-      <AnimatePresence mode="wait">
+      <div className="flex-1 flex flex-col min-h-screen">
         <Routes location={location} key={location.pathname}>
           {/* Main Auth Gateway */}
           <Route path="/" element={<AuthLanding />} />
@@ -84,6 +86,8 @@ const AppRoutes = () => {
           <Route path="/vendor" element={<ModuleWrapper type="vendor"><VendorHome /></ModuleWrapper>} />
           <Route path="/vendor/login" element={<ModuleWrapper type="vendor"><VendorLogin /></ModuleWrapper>} />
           <Route path="/vendor/register" element={<ModuleWrapper type="vendor"><VendorRegister /></ModuleWrapper>} />
+          <Route path="/vendor/register/personal" element={<ModuleWrapper type="vendor"><VendorPersonal /></ModuleWrapper>} />
+          <Route path="/vendor/register/expertise" element={<ModuleWrapper type="vendor"><VendorExpertise /></ModuleWrapper>} />
           <Route path="/vendor/jobs" element={<ModuleWrapper type="vendor"><VendorJobs /></ModuleWrapper>} />
           <Route path="/vendor/earnings" element={<Navigate to="/vendor" replace />} />
           <Route path="/vendor/settings" element={<ModuleWrapper type="vendor"><VendorSettings /></ModuleWrapper>} />
@@ -100,14 +104,14 @@ const AppRoutes = () => {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/user" replace />} />
         </Routes>
-      </AnimatePresence>
+      </div>
     </Suspense>
   );
 };
 
 const AppContent = () => {
   const location = useLocation();
-  const authPaths = ['/', '/user/login', '/user/register', '/vendor/login', '/vendor/register'];
+  const authPaths = ['/', '/user/login', '/user/register', '/vendor/login', '/vendor/register', '/vendor/register/personal', '/vendor/register/expertise'];
   const isAuthPage = authPaths.includes(location.pathname);
 
   return (
@@ -164,12 +168,21 @@ function App() {
   return (
     <Router>
       <div className="relative min-h-screen bg-slate-200/50 font-sans selection:bg-[#C44545]/30 selection:text-[#C44545] antialiased">
-        <AnimatePresence>
-          {isLoading && <Loader key="loader" />}
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <Loader key="main-loader" />
+          ) : (
+            <motion.div 
+              key="main-app-content"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <ScrollToTop />
+              <AppContent />
+            </motion.div>
+          )}
         </AnimatePresence>
-
-        <ScrollToTop />
-        {!isLoading && <AppContent />}
       </div>
     </Router>
   );
